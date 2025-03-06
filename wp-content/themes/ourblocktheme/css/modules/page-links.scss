@@ -1,0 +1,60 @@
+@use 'sass:color';
+@use "../base/variables" as var;
+@use "../base/baseline" as base;
+
+.page-links {
+  position: relative;
+  z-index: 1;
+  background-color: var.$beige;
+  margin: 0 0 40px 0;
+  @include base.atSmallMedium {
+    margin: 0 0 40px 20px;
+    width: 300px;
+    float: right;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    padding: 20px 0;
+    background-color: var.$mainBlue;
+    color: #fff;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      background-color: var.$mainBlue;
+    }
+  }
+
+  li {
+    border-top: 1px solid color.adjust(var.$beige, $lightness: -14%);
+  }
+
+  li:first-child {
+    border-top: none;
+  }
+
+  &__active,
+  & .current_page_item {
+    text-align: center;
+    background-color: color.scale(var.$beige, $lightness: -7%, $saturation: -10%);
+    color: var.$mainBlue;
+    font-weight: bold;
+  }
+
+  li a {
+    display: block;
+    text-align: center;
+    padding: 17px 10px;
+    text-decoration: none;
+    color: var.$mainBlue;
+    transition: all 0.3s;
+  }
+
+  li a:hover {
+    color: color.adjust(var.$mainBlue, $lightness: -6%);
+    background-color: color.scale(var.$beige, $lightness: -9%, $saturation: -12%);
+  }
+}

@@ -1,0 +1,18 @@
+@use 'sass:color';
+@use "../base/variables" as var;
+
+body.login .button-primary {
+  background-color: var.$darkOrange;
+  border-color: color.scale(var.$darkOrange, $lightness: -10%);
+  text-shadow: 0 -1px 1px color.scale(var.$darkOrange, $lightness: -15%), 1px 0 1px color.scale(var.$darkOrange, $lightness: -15%), 0 1px 1px color.scale(var.$darkOrange, $lightness: -15%), -1px 0 1px color.scale(var.$darkOrange, $lightness: -15%);
+  box-shadow: 0 1px 0 color.scale(var.$darkOrange, $lightness: -20%);
+}
+
+body.login .button-primary:active,
+body.login .button-primary:focus,
+body.login .button-primary:hover {
+  background-color: color.scale(var.$darkOrange, $lightness: -9%);
+  border-color: var.$darkOrange;
+  text-shadow: 0 -1px 1px color.scale(var.$darkOrange, $lightness: -20%), 1px 0 1px color.scale(var.$darkOrange, $lightness: -20%), 0 1px 1px color.scale(var.$darkOrange, $lightness: -20%), -1px 0 1px color.scale(var.$darkOrange, $lightness: -20%);
+  box-shadow: 0 1px 0 color.scale(var.$darkOrange, $lightness: -25%);
+}
