@@ -166,7 +166,7 @@ function ourLoginTitle(): null|string {
 // Force note posts to be private
 add_filter( 'wp_insert_post_data', 'makeNotePrivate', 10, 2 );
 
-function makeNotePrivate( $data, $postarr ) {
+function makeNotePrivate( $data, $postarr ): array {
     if ( $data['post_type'] == 'note' ) {
         if ( count_user_posts( get_current_user_id(), 'note' ) > 4 and ! $postarr['ID'] ) {
             die( "You have reached your note limit." );

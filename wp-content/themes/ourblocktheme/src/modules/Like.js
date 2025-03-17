@@ -22,7 +22,7 @@ class Like {
 			currentLikeBox = currentLikeBox.parentElement;
 		}
 
-		if ( currentLikeBox.getAttribute( 'data-exists' ) == 'yes' ) {
+		if ( currentLikeBox.getAttribute( 'data-exists' ) === 'yes' ) {
 			this.deleteLike( currentLikeBox );
 		} else {
 			this.createLike( currentLikeBox );
@@ -35,7 +35,7 @@ class Like {
 				universityData.root_url + '/wp-json/university/v1/manageLike',
 				{ professorId: currentLikeBox.getAttribute( 'data-professor' ) }
 			);
-			if ( response.data != 'Only logged in users can create a like.' ) {
+			if ( response.data !== 'Only logged in users can create a like.' ) {
 				currentLikeBox.setAttribute( 'data-exists', 'yes' );
 				var likeCount = parseInt(
 					currentLikeBox.querySelector( '.like-count' ).innerHTML,

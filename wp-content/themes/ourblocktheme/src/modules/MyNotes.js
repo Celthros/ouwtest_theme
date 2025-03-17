@@ -40,7 +40,7 @@ class MyNotes {
 
 	findNearestParentLi( el ) {
 		let thisNote = el;
-		while ( thisNote.tagName != 'LI' ) {
+		while ( thisNote.tagName !== 'LI' ) {
 			thisNote = thisNote.parentElement;
 		}
 		return thisNote;
@@ -50,7 +50,7 @@ class MyNotes {
 	editNote( e ) {
 		const thisNote = this.findNearestParentLi( e.target );
 
-		if ( thisNote.getAttribute( 'data-state' ) == 'editable' ) {
+		if ( thisNote.getAttribute( 'data-state' ) === 'editable' ) {
 			this.makeNoteReadOnly( thisNote );
 		} else {
 			this.makeNoteEditable( thisNote );
@@ -159,7 +159,7 @@ class MyNotes {
 				ourNewPost
 			);
 
-			if ( response.data != 'You have reached your note limit.' ) {
+			if ( response.data !== 'You have reached your note limit.' ) {
 				document.querySelector( '.new-note-title' ).value = '';
 				document.querySelector( '.new-note-body' ).value = '';
 				document.querySelector( '#my-notes' ).insertAdjacentHTML(

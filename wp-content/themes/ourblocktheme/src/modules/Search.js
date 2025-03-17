@@ -34,7 +34,7 @@ class Search {
 
 	// 3. methods (function, action...)
 	typingLogic() {
-		if ( this.searchField.value != this.previousValue ) {
+		if ( this.searchField.value !== this.previousValue ) {
 			clearTimeout( this.typingTimer );
 
 			if ( this.searchField.value ) {
@@ -79,7 +79,7 @@ class Search {
 							`<li><a href="${ item.permalink }">${
 								item.title
 							}</a> ${
-								item.postType == 'post'
+								item.postType === 'post'
 									? `by ${ item.authorName }`
 									: ''
 							}</li>`
