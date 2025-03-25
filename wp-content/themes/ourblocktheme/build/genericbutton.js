@@ -56,26 +56,6 @@ const ourColors = [{
 
 /***/ }),
 
-/***/ "react":
-/*!************************!*\
-  !*** external "React" ***!
-  \************************/
-/***/ ((module) => {
-
-module.exports = window["React"];
-
-/***/ }),
-
-/***/ "react/jsx-runtime":
-/*!**********************************!*\
-  !*** external "ReactJSXRuntime" ***!
-  \**********************************/
-/***/ ((module) => {
-
-module.exports = window["ReactJSXRuntime"];
-
-/***/ }),
-
 /***/ "@wordpress/block-editor":
 /*!*************************************!*\
   !*** external ["wp","blockEditor"] ***!
@@ -123,6 +103,26 @@ module.exports = window["wp"]["element"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["primitives"];
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = window["React"];
+
+/***/ }),
+
+/***/ "react/jsx-runtime":
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+/***/ ((module) => {
+
+module.exports = window["ReactJSXRuntime"];
 
 /***/ })
 

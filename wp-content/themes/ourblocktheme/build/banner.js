@@ -2,16 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "react/jsx-runtime":
-/*!**********************************!*\
-  !*** external "ReactJSXRuntime" ***!
-  \**********************************/
-/***/ ((module) => {
-
-module.exports = window["ReactJSXRuntime"];
-
-/***/ }),
-
 /***/ "@wordpress/api-fetch":
 /*!**********************************!*\
   !*** external ["wp","apiFetch"] ***!
@@ -59,6 +49,16 @@ module.exports = window["wp"]["components"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["element"];
+
+/***/ }),
+
+/***/ "react/jsx-runtime":
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+/***/ ((module) => {
+
+module.exports = window["ReactJSXRuntime"];
 
 /***/ })
 
@@ -169,7 +169,8 @@ __webpack_require__.r(__webpack_exports__);
       type: 'number'
     },
     imgURL: {
-      type: 'string'
+      type: 'string',
+      default: banner.fallbackimage || ''
     }
   },
   edit: EditComponent,
@@ -177,16 +178,17 @@ __webpack_require__.r(__webpack_exports__);
 });
 function EditComponent(props) {
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(function () {
-    async function go() {
-      const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default()({
-        path: `/wp/v2/media/${props.attributes.imgID}`,
-        method: 'GET'
-      });
-      props.setAttributes({
-        imgURL: response.media_details.sizes.pageBanner.source_url
-      });
+    if (props.attributes.imgID) {
+      (async () => {
+        const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default()({
+          path: `/wp/v2/media/${props.attributes.imgID}`,
+          method: 'GET'
+        });
+        props.setAttributes({
+          imgURL: response.media_details.sizes.pageBanner.source_url
+        });
+      })();
     }
-    go();
   }, [props.attributes.imgID]);
   function onFileSelect(x) {
     props.setAttributes({
