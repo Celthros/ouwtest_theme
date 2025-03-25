@@ -22,16 +22,16 @@ add_action( 'rest_api_init', 'university_custom_rest' );
 function pageBanner( $args = null ): void {
 
     if ( ! isset( $args['title'] ) ) {
-        $args['title'] = get_the_title();
+        $args['title'] = get_the_title() ? get_the_title() : 'Our Block Theme';
     }
 
     if ( ! isset( $args['subtitle'] ) ) {
-        $args['subtitle'] = get_field( 'page_banner_subtitle' );
+        $args['subtitle'] = get_field( 'page_banner_subtitle' ) ? get_field( 'page_banner_subtitle' ) : '';
     }
 
     if ( ! isset( $args['photo'] ) ) {
         if ( get_field( 'page_banner_background_image' ) and ! is_archive() and ! is_home() ) {
-            $args['photo'] = get_field( 'page_banner_background_image' )['sizes']['pageBanner'];
+            $args['photo'] = get_field( 'page_banner_background_image' )['sizes']['pageBanner'] ?? '';
         } else {
             $args['photo'] = get_theme_file_uri( '/images/ocean.jpg' );
         }
@@ -191,15 +191,19 @@ class JSXBlock {
     public string $name;
     public mixed $renderCallback;
 
-    function __construct( $name, $renderCallback = null ) {
-        $this->name = $name;
+    public mixed $data;
+
+    function __construct( $name, $renderCallback = null, $data = null ) {
+        $this->name           = $name;
         $this->renderCallback = $renderCallback;
+        $this->data           = $data;
         add_action( 'init', array( $this, 'onInit' ) );
     }
 
     function ourRenderCallback( $attributes, $content ): false|string {
         ob_start();
         require get_theme_file_path( "blocks/{$this->name}.php" );
+
         return ob_get_clean();
     }
 
@@ -209,12 +213,16 @@ class JSXBlock {
                 'wp-editor'
         ) );
 
+        if ( $this->data ) {
+            wp_localize_script( $this->name, $this->name, $this->data );
+        }
+
         $ourArgs = array(
                 'editor_script' => $this->name
         );
 
         if ( $this->renderCallback ) {
-            $ourArgs['render_callback'] = [$this, 'ourRenderCallback'];
+            $ourArgs['render_callback'] = [ $this, 'ourRenderCallback' ];
         }
 
         register_block_type( "ourblocktheme/{$this->name}", $ourArgs );
@@ -222,6 +230,6 @@ class JSXBlock {
 
 }
 
-new JSXBlock( 'banner', true );
+new JSXBlock( 'banner', true, [ 'fallbackimage' => get_theme_file_uri( '/images/library-hero.jpg' ) ] );
 new JSXBlock( 'genericheading' );
 new JSXBlock( 'genericbutton' );
