@@ -186,11 +186,46 @@ function makeNotePrivate( $data, $postarr ): array {
 /**
  * @property mixed $name
  */
+class PlaceholderBlock {
+
+    public string $name;
+
+    function __construct( $name ) {
+        $this->name = $name;
+        add_action( 'init', array( $this, 'onInit' ) );
+    }
+
+    function ourRenderCallback( $attributes, $content ): false|string {
+        ob_start();
+        require get_theme_file_path( "blocks/{$this->name}.php" );
+
+        return ob_get_clean();
+    }
+
+    public function onInit(): void {
+        wp_register_script( $this->name, get_stylesheet_directory_uri() . "/blocks/{$this->name}.js", array(
+                'wp-blocks',
+                'wp-editor'
+        ) );
+
+        register_block_type( "ourblocktheme/{$this->name}", array(
+                'editor_script'   => $this->name,
+                'render_callback' => [ $this, 'ourRenderCallback' ]
+        ) );
+    }
+}
+
+new PlaceholderBlock( "eventsandblogs" );
+
+/**
+ * @property mixed $name
+ * @property mixed $renderCallback
+ * @property mixed $data
+ */
 class JSXBlock {
 
     public string $name;
     public mixed $renderCallback;
-
     public mixed $data;
 
     function __construct( $name, $renderCallback = null, $data = null ) {

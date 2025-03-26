@@ -140,6 +140,14 @@ li {
 
 /* BEM Blocks */
 /* SASS and Global'ish Stuff */
+.our-placeholder-block {
+  padding: 1.25rem;
+  font-size: 1.65rem;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  background: linear-gradient(180deg, #dedede, #adadad);
+}
+
 .remove-favorite {
   display: inline-block;
   transition: all 0.3s;
