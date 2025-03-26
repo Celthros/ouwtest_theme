@@ -1,5 +1,5 @@
-wp.blocks.registerBlockType('ourblocktheme/eventsandblogs', {
-  title: 'Events and Blogs',
+wp.blocks.registerBlockType('ourblocktheme/footer', {
+  title: 'OUR Footer',
   supports: {
     align: ['full'],
   },
@@ -9,8 +9,8 @@ wp.blocks.registerBlockType('ourblocktheme/eventsandblogs', {
   edit: function () {
     return wp.element.createElement(
       'div',
-      {className: 'our-placeholder-block'},
-      'This is Events and Blogs'
+      { className: 'our-placeholder-block' },
+      'Footer Placeholder'
     );
   },
   save: function () {
