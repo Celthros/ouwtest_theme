@@ -198,13 +198,13 @@ class PlaceholderBlock {
 
     function ourRenderCallback( $attributes, $content ): false|string {
         ob_start();
-        require get_theme_file_path( "blocks/{$this->name}.php" );
+        require get_theme_file_path( "blocks/{$this->name}/{$this->name}.php" );
 
         return ob_get_clean();
     }
 
     public function onInit(): void {
-        wp_register_script( $this->name, get_stylesheet_directory_uri() . "/blocks/{$this->name}.js", array(
+        wp_register_script( $this->name, get_stylesheet_directory_uri() . "/blocks/{$this->name}/{$this->name}.js", array(
                 'wp-blocks',
                 'wp-editor'
         ) );
@@ -217,8 +217,8 @@ class PlaceholderBlock {
 }
 
 new PlaceholderBlock( "eventsandblogs" );
-new PlaceholderBlock( 'header' );
-new PlaceholderBlock( 'footer' );
+new PlaceholderBlock( "header" );
+new PlaceholderBlock( "footer" );
 
 /**
  * @property mixed $name
@@ -240,7 +240,7 @@ class JSXBlock {
 
     function ourRenderCallback( $attributes, $content ): false|string {
         ob_start();
-        require get_theme_file_path( "blocks/{$this->name}.php" );
+        require get_theme_file_path( "blocks/{$this->name}/{$this->name}.php" );
 
         return ob_get_clean();
     }
@@ -271,3 +271,5 @@ class JSXBlock {
 new JSXBlock( 'banner', true, [ 'fallbackimage' => get_theme_file_uri( '/images/library-hero.jpg' ) ] );
 new JSXBlock( 'genericheading' );
 new JSXBlock( 'genericbutton' );
+new JSXBlock( 'slideshow', true);
+new JSXBlock( 'slide', true);

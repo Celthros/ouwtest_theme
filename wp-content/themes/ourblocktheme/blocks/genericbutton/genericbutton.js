@@ -1,4 +1,4 @@
-import ourColors from '../inc/ourColors';
+import ourColors from '../../inc/ourColors';
 import { link } from '@wordpress/icons';
 import {
 	ToolbarGroup,

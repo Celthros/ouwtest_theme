@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "wp-scripts build",
-    "start": "wp-scripts start src/index.js blocks/banner.js blocks/genericheading.js blocks/genericbutton.js, blocks/eventsandblogs.js",
+    "start": "wp-scripts start src/index.js blocks/banner/banner.js blocks/genericheading/genericheading.js blocks/genericbutton/genericbutton.js blocks/slideshow/slideshow.js blocks/slide/slide.js",
     "dev": "wp-scripts start",
     "devFast": "wp-scripts start",
     "format": "wp-scripts format",

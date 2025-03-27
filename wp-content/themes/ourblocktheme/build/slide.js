@@ -133,9 +133,9 @@ module.exports = window["ReactJSXRuntime"];
 var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
-/*!*********************************!*\
-  !*** ./blocks/banner/banner.js ***!
-  \*********************************/
+/*!*******************************!*\
+  !*** ./blocks/slide/slide.js ***!
+  \*******************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__);
@@ -155,8 +155,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.registerBlockType)('ourblocktheme/banner', {
-  title: 'Banner',
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.registerBlockType)('ourblocktheme/slide', {
+  title: 'Slide',
   supports: {
     align: ['full']
   },
@@ -240,4 +240,4 @@ function SaveComponent() {
 
 /******/ })()
 ;
-//# sourceMappingURL=banner.js.map
+//# sourceMappingURL=slide.js.map
