@@ -4,6 +4,8 @@ if ( ! isset( $attributes['imgURL'] ) ) {
     $attributes['imgURL'] = get_theme_file_uri( '/images/library-hero.jpg' );
 }
 
+$content = isset( $content ) ? $content : '';
+
 ?>
 
 
