@@ -1,10 +1,12 @@
 <?php
 
-if ( ! isset( $attributes['imgURL'] ) ) {
-    $attributes['imgURL'] = get_theme_file_uri( '/images/library-hero.jpg' );
+if (!empty($attributes['themeimage'])) {
+    $attributes['imgURL'] = get_theme_file_uri('/images/' . $attributes['themeimage']);
 }
 
-$content = isset( $content ) ? $content : '';
+if (!isset($attributes['imgURL'])) {
+    $attributes['imgURL'] = get_theme_file_uri('/images/library-hero.jpg');
+}
 
 ?>
 
@@ -16,4 +18,4 @@ $content = isset( $content ) ? $content : '';
         </div>
     </div>
 </div>
-
+      
