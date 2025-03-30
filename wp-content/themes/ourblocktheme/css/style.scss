@@ -1,4 +1,5 @@
 /* SASS and Global'ish Stuff */
+@use "base/third-party";
 @use "base/variables";
 @use "base/baseline";
 @use "base/utility-classes";
@@ -24,7 +25,3 @@
 @use "modules/link-list";
 @use "modules/metabox";
 @use "modules/post-item";
-
-/* 3rd party packages */
-@import "normalize.css";
-@import "~@glidejs/glide/dist/css/glide.core.min.css";

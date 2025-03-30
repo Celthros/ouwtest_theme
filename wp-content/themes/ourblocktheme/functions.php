@@ -23,19 +23,21 @@ add_action( 'rest_api_init', 'university_custom_rest' );
 function pageBanner( $args = null ): void {
 
     if ( ! isset( $args['title'] ) ) {
-        $args['title'] = get_the_title() ? get_the_title() : 'Our Block Theme';
+        $args['title'] = get_the_title() ?? 'Our Block Theme';
     }
 
     if ( ! isset( $args['subtitle'] ) ) {
-        $args['subtitle'] = get_field( 'page_banner_subtitle' ) ? get_field( 'page_banner_subtitle' ) : '';
+        //$args['subtitle'] = get_field( 'page_banner_subtitle' ) ?? 'Welcome to our site';
+        $args['subtitle'] = 'Welcome to our site';
     }
 
     if ( ! isset( $args['photo'] ) ) {
-        if ( get_field( 'page_banner_background_image' ) and ! is_archive() and ! is_home() ) {
-            $args['photo'] = get_field( 'page_banner_background_image' )['sizes']['pageBanner'] ?? '';
-        } else {
-            $args['photo'] = get_theme_file_uri( '/images/ocean.jpg' );
-        }
+        $args['photo'] = get_theme_file_uri( '/images/ocean.jpg' );
+        //if ( get_field( 'page_banner_background_image' ) && ! is_archive() && ! is_home() ) {
+        //    $args['photo'] = get_field( 'page_banner_background_image' )['sizes']['pageBanner'] ?? '';
+        //} else {
+        //    $args['photo'] = get_theme_file_uri( '/images/ocean.jpg' );
+        // }
     }
 
     ?>
@@ -84,17 +86,17 @@ function university_features(): void {
 add_action( 'after_setup_theme', 'university_features' );
 
 function university_adjust_queries( $query ): void {
-    if ( ! is_admin() and is_post_type_archive( 'campus' ) and $query->is_main_query() ) {
+    if ( ! is_admin() && is_post_type_archive( 'campus' ) && $query->is_main_query() ) {
         $query->set( 'posts_per_page', - 1 );
     }
 
-    if ( ! is_admin() and is_post_type_archive( 'program' ) and $query->is_main_query() ) {
+    if ( ! is_admin() && is_post_type_archive( 'program' ) && $query->is_main_query() ) {
         $query->set( 'orderby', 'title' );
         $query->set( 'order', 'ASC' );
         $query->set( 'posts_per_page', - 1 );
     }
 
-    if ( ! is_admin() and is_post_type_archive( 'event' ) and $query->is_main_query() ) {
+    if ( ! is_admin() && is_post_type_archive( 'event' ) && $query->is_main_query() ) {
         $today = date( 'Ymd' );
         $query->set( 'meta_key', 'event_date' );
         $query->set( 'orderby', 'meta_value_num' );
@@ -112,13 +114,13 @@ function university_adjust_queries( $query ): void {
 
 add_action( 'pre_get_posts', 'university_adjust_queries' );
 
-function universityMapKey( $api ) {
+function universityMapKey( $api ): string {
     $api['key'] = 'yourKeyGoesHere';
 
     return $api;
 }
 
-add_filter( 'acf/fields/google_map/api', 'universityMapKey' );
+//add_filter( 'acf/fields/google_map/api', 'universityMapKey' );
 
 // Redirect subscriber accounts out of admin and onto homepage
 add_action( 'admin_init', 'redirectSubsToFrontend' );
@@ -126,7 +128,7 @@ add_action( 'admin_init', 'redirectSubsToFrontend' );
 function redirectSubsToFrontend(): void {
     $ourCurrentUser = wp_get_current_user();
 
-    if ( count( $ourCurrentUser->roles ) == 1 and $ourCurrentUser->roles[0] == 'subscriber' ) {
+    if ( count( $ourCurrentUser->roles ) == 1 && $ourCurrentUser->roles[0] == 'subscriber' ) {
         wp_redirect( site_url( '/' ) );
         exit;
     }
@@ -137,7 +139,7 @@ add_action( 'wp_loaded', 'noSubsAdminBar' );
 function noSubsAdminBar(): void {
     $ourCurrentUser = wp_get_current_user();
 
-    if ( count( $ourCurrentUser->roles ) == 1 and $ourCurrentUser->roles[0] == 'subscriber' ) {
+    if ( count( $ourCurrentUser->roles ) == 1 && $ourCurrentUser->roles[0] == 'subscriber' ) {
         show_admin_bar( false );
     }
 }
@@ -169,7 +171,7 @@ add_filter( 'wp_insert_post_data', 'makeNotePrivate', 10, 2 );
 
 function makeNotePrivate( $data, $postarr ): array {
     if ( $data['post_type'] == 'note' ) {
-        if ( count_user_posts( get_current_user_id(), 'note' ) > 4 and ! $postarr['ID'] ) {
+        if ( count_user_posts( get_current_user_id(), 'note' ) > 4 && ! $postarr['ID'] ) {
             die( "You have reached your note limit." );
         }
 
@@ -177,7 +179,7 @@ function makeNotePrivate( $data, $postarr ): array {
         $data['post_title']   = sanitize_text_field( $data['post_title'] );
     }
 
-    if ( $data['post_type'] == 'note' and $data['post_status'] != 'trash' ) {
+    if ( $data['post_type'] == 'note' && $data['post_status'] != 'trash' ) {
         $data['post_status'] = "private";
     }
 
@@ -185,7 +187,7 @@ function makeNotePrivate( $data, $postarr ): array {
 }
 
 /**
- * @property mixed $name
+ * @property string $name
  */
 class PlaceholderBlock {
 
@@ -216,13 +218,33 @@ class PlaceholderBlock {
     }
 }
 
-new PlaceholderBlock( "eventsandblogs" );
-new PlaceholderBlock( "header" );
-new PlaceholderBlock( "footer" );
-new PlaceholderBlock( "singlepost" );
+$placeBlocks = [
+        "eventsandblogs",
+        "header",
+        "footer",
+        "singlepost",
+        "page",
+        "blogindex",
+        "programarchive",
+        "archive",
+        "archivecampus",
+        "archiveevent",
+        "search",
+        "searchresults",
+        "singlecampus",
+        "singleevent",
+        "singleprofessor",
+        "singleprogram",
+        "pastevents",
+        "mynotes"
+];
+
+foreach ( $placeBlocks as $placeBlock ) {
+    new PlaceholderBlock( $placeBlock );
+}
 
 /**
- * @property mixed $name
+ * @property string $name
  * @property mixed $renderCallback
  * @property mixed $data
  */
