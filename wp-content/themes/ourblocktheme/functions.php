@@ -1,5 +1,11 @@
 <?php
 
+//require_once get_theme_file_path( 'autoload.php' );
+
+//use Ourblocktheme\Autoload;
+
+//Autoload::init();
+
 require get_theme_file_path( '/inc/like-route.php' );
 require get_theme_file_path( '/inc/search-route.php' );
 require get_theme_file_path( '/inc/gtm.php' );
