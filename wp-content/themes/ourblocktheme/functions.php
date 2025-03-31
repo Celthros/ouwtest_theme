@@ -234,7 +234,7 @@ $placeBlocks = [
         "programarchive",
         "archive",
         "archivecampus",
-        "archiveevent",
+        "archive-event",
         "search",
         "searchresults",
         "singlecampus",
