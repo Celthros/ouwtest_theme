@@ -109,7 +109,6 @@ src/.htaccess
 /wp-content/uploads/
 /uploads/2021/12/
 /uploads/2022/01/
-/wp-content/mu-plugins/
 /wp-content/advanced-cache.php
 /wp-content/object-cache.php
 /wp-content/plugins/query-monitor/
