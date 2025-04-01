@@ -14,7 +14,7 @@ function university_post_types(): void {
 			'has_archive'   => true,
 			'menu_icon'     => 'dashicons-calendar',
 			'menu_position' => 7,
-			'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields' ),
+			'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes'),
 			'rewrite'       => array( 'slug' => 'events' ),
 			'show_in_rest'  => true,
 
