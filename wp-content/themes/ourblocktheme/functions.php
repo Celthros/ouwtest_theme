@@ -2,6 +2,8 @@
 
 //require_once get_theme_file_path( 'autoload.php' );
 
+//namespace Ourblocktheme;
+
 //use Ourblocktheme\Autoload;
 
 //Autoload::init();

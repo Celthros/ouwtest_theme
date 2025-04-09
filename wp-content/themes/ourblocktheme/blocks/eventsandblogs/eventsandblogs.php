@@ -1,25 +1,43 @@
+<?php
+
+/**
+ * Block Name: Events and Blogs
+ *
+ * This is the template that displays the events and blogs block.
+ *
+ * @package ourblocktheme
+ */
+
+$today          = date( 'Ymd' );
+$homepageEvents = new WP_Query( array(
+        'posts_per_page' => 3,
+        'post_type'      => 'event',
+        'meta_key'       => 'event_date',
+        'orderby'        => 'meta_value_num',
+        'order'          => 'ASC',
+        'meta_query'     => array(
+                array(
+                        'key'     => 'event_date',
+                        'compare' => '>=',
+                        'value'   => $today,
+                        'type'    => 'numeric'
+                )
+        )
+) );
+
+$homepagePosts = new WP_Query( array(
+        'posts_per_page' => 3
+) );
+
+
+?>
 <div class="full-width-split group">
     <div class="full-width-split__one">
         <div class="full-width-split__inner">
             <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
 
             <?php
-            $today          = date( 'Ymd' );
-            $homepageEvents = new WP_Query( array(
-                    'posts_per_page' => 2,
-                    'post_type'      => 'event',
-                    'meta_key'       => 'event_date',
-                    'orderby'        => 'meta_value_num',
-                    'order'          => 'ASC',
-                    'meta_query'     => array(
-                            array(
-                                    'key'     => 'event_date',
-                                    'compare' => '>=',
-                                    'value'   => $today,
-                                    'type'    => 'numeric'
-                            )
-                    )
-            ) );
+
 
             while ( $homepageEvents->have_posts() ) {
                 $homepageEvents->the_post();
@@ -35,12 +53,7 @@
     <div class="full-width-split__two">
         <div class="full-width-split__inner">
             <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
-            <?php
-            $homepagePosts = new WP_Query( array(
-                    'posts_per_page' => 2
-            ) );
-
-            while ( $homepagePosts->have_posts() ) {
+            <?php while ( $homepagePosts->have_posts() ) {
                 $homepagePosts->the_post(); ?>
                 <div class="event-summary">
                     <a class="event-summary__date event-summary__date--beige t-center" href="<?php the_permalink(); ?>">
@@ -62,7 +75,7 @@
             ?>
 
 
-            <p class="t-center no-margin"><a href="<?php echo site_url( '/blog' ); ?>" class="btn btn--yellow">View All
+            <p class="t-center no-margin"><a href="<?php echo site_url( '/blog/' ); ?>" class="btn btn--yellow">View All
                     Blog Posts</a></p>
         </div>
     </div>
