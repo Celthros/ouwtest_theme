@@ -25,24 +25,24 @@
           )
         ));
 
-        if ($relatedProfessors->have_posts()) {
-          echo '<hr class="section-break">';
-        echo '<h2 class="headline headline--medium">' . get_the_title() . ' Professors</h2>';
+        if ($relatedProfessors->have_posts()): ?>
+        <hr class="section-break">
+        <h2 class="headline headline--medium"><?php echo get_the_title(); ?> Professors</h2>
 
-        echo '<ul class="professor-cards">';
-        while($relatedProfessors->have_posts()) {
+        <ul class="professor-cards">
+        <?php while($relatedProfessors->have_posts()):
           $relatedProfessors->the_post(); ?>
           <li class="professor-card__list-item">
             <a class="professor-card" href="<?php the_permalink(); ?>">
-              <img class="professor-card__image" src="<?php the_post_thumbnail_url('professorLandscape') ?>">
+              <img class="professor-card__image" src="<?php the_post_thumbnail_url('professorLandscape') ?>" alt="">
               <span class="professor-card__name"><?php the_title(); ?></span>
             </a>
           </li>
-        <?php }
-        echo '</ul>';
-        }
+        <?php endwhile; ?>
+        </ul>
+        <?php endif; ?>
 
-        wp_reset_postdata();
+        <?php wp_reset_postdata();
 
         $today = date('Ymd');
         $homepageEvents = new WP_Query(array(
@@ -66,32 +66,29 @@
           )
         ));
 
-        if ($homepageEvents->have_posts()) {
-          echo '<hr class="section-break">';
-        echo '<h2 class="headline headline--medium">Upcoming ' . get_the_title() . ' Events</h2>';
+        if ($homepageEvents->have_posts()) : ?>
+        <hr class="section-break">
+        <h2 class="headline headline--medium">Upcoming <?php echo get_the_title(); ?> Events</h2>
 
-        while($homepageEvents->have_posts()) {
+        <?php while($homepageEvents->have_posts()) :
           $homepageEvents->the_post();
           get_template_part('template-parts/content-event');
-        }
-        }
+        endwhile;
+
+        endif;
 
         wp_reset_postdata();
         $relatedCampuses = get_field('related_campus');
 
-        if ($relatedCampuses) {
-          echo '<hr class="section-break">';
-          echo '<h2 class="headline headline--medium">' . get_the_title() . ' is Available At These Campuses:</h2>';
+        if ($relatedCampuses) : ?>
+          <hr class="section-break">
+          <h2 class="headline headline--medium"><?php echo get_the_title(); ?> is Available At These Campuses:</h2>
+          <ul class="min-list link-list">
+          <?php foreach($relatedCampuses as $campus) : ?>
+              <li><a href="<?php echo get_the_permalink($campus); ?>"><?php echo get_the_title($campus) ?></a></li>
+            <?php endforeach; ?>
+          </ul>
 
-          echo '<ul class="min-list link-list">';
-          foreach($relatedCampuses as $campus) {
-            ?> <li><a href="<?php echo get_the_permalink($campus); ?>"><?php echo get_the_title($campus) ?></a></li> <?php
-          }
-          echo '</ul>';
-
-        }
-
-      ?>
+        <?php endif; ?>
 
     </div>
-    
