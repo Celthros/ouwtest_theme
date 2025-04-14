@@ -41,9 +41,9 @@
         <?php endwhile; ?>
         </ul>
         <?php endif; ?>
+        <?php wp_reset_postdata(); ?>
 
-        <?php wp_reset_postdata();
-
+		<?php
         $today = date('Ymd');
         $homepageEvents = new WP_Query(array(
           'posts_per_page' => 2,
@@ -74,10 +74,11 @@
           $homepageEvents->the_post();
           get_template_part('template-parts/content-event');
         endwhile;
-
         endif;
-
         wp_reset_postdata();
+		?>
+
+	    <?php
         $relatedCampuses = get_field('related_campus');
 
         if ($relatedCampuses) : ?>
