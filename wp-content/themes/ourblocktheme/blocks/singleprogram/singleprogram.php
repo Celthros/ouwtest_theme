@@ -40,6 +40,10 @@ pageBanner();
 							<img class="professor-card__image"
 							     src="<?php the_post_thumbnail_url( 'professorLandscape' ) ?>"
 							     alt="">
+						<?php else: ?>
+							<div class="professor-card__placeholder">
+								<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+							</div>
 						<?php endif; ?>
 						<span class="professor-card__name"><?php the_title(); ?></span>
 					</a>

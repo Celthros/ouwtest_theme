@@ -22,12 +22,16 @@
     width: 180px;
   }
 
-  &__image {
+	&__placeholder {
+		min-height: 8.125rem; // 130px ÷ 16 = 8.125rem
+	}
+
+  &__image, &__placeholder {
     display: block;
     transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   }
 
-  &:hover &__image {
+  &:hover &__image, &__placeholder {
     opacity: 0.8;
     transform: scale(1.1) rotate(4deg);
   }
