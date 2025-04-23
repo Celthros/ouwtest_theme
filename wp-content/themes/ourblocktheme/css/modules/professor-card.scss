@@ -17,6 +17,7 @@
   margin-right: 15px;
   background-color: var.$darkOrange;
   overflow: hidden;
+	text-decoration: none;
 
   .search-overlay & {
     width: 180px;
@@ -24,17 +25,26 @@
 
 	&__placeholder {
 		min-height: 8.125rem; // 130px ÷ 16 = 8.125rem
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 	}
 
-  &__image, &__placeholder {
+  &__image {
     display: block;
     transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   }
 
-  &:hover &__image, &__placeholder {
+  &:hover &__image, &:hover &__placeholder {
     opacity: 0.8;
     transform: scale(1.1) rotate(4deg);
   }
+
+	.fa-user-circle-o{
+		font-size: 4rem;
+	}
 
   &__name {
     font-weight: 300;
