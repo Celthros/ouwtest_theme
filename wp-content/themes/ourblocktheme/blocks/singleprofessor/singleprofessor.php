@@ -73,11 +73,9 @@ pageBanner();
 	<ul class="link-list min-list">
 		<?php foreach ( $relatedPrograms as $program ) : ?>
 		<li><a href="<?php echo get_the_permalink( $program ); ?>"><?php echo get_the_title( $program ); ?></a></li>
-		<?php endif; ?>
+		<?php endforeach; ?>
 	</ul>
-	}
-
-	?>
+	<?php } ?>
 
 </div>
     
