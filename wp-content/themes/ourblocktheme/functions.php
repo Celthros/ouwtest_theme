@@ -119,13 +119,12 @@ function university_adjust_queries( $query ): void {
 
 add_action( 'pre_get_posts', 'university_adjust_queries' );
 
-function universityMapKey( $api ): string {
-	$api['key'] = 'yourKeyGoesHere';
-
+function universityMapKey( $api ): array {
+	$api['key'] = 'AIzaSyBRRnSwouBfAyhQ47rfDX0NMPcqiQ1Qm4s';
 	return $api;
 }
 
-//add_filter( 'acf/fields/google_map/api', 'universityMapKey' );
+add_filter( 'acf/fields/google_map/api', 'universityMapKey' );
 
 // Redirect subscriber accounts out of admin and onto homepage
 add_action( 'admin_init', 'redirectSubsToFrontend' );
