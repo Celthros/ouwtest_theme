@@ -8,9 +8,9 @@ class MobileMenu {
 	}
 
 	events() {
-    if(this.openButton){
-      this.openButton.addEventListener( 'click', () => this.openMenu() );
-    }
+		if ( this.openButton ) {
+			this.openButton.addEventListener( 'click', () => this.openMenu() );
+		}
 	}
 
 	openMenu() {

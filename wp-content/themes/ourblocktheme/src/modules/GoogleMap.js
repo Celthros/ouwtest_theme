@@ -14,9 +14,9 @@ class GMap {
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 		};
 
-    let map = new google.maps.Map( $el, args );
+		let map = new google.maps.Map( $el, args );
 		map.markers = [];
-    let that = this;
+		let that = this;
 
 		// add markers
 		$markers.forEach( function ( x ) {
@@ -28,12 +28,12 @@ class GMap {
 	} // end new_map
 
 	add_marker( $marker, map ) {
-    let latlng = new google.maps.LatLng(
+		let latlng = new google.maps.LatLng(
 			$marker.getAttribute( 'data-lat' ),
 			$marker.getAttribute( 'data-lng' )
 		);
 
-    let marker = new google.maps.Marker( {
+		let marker = new google.maps.Marker( {
 			position: latlng,
 			map: map,
 		} );
@@ -43,7 +43,7 @@ class GMap {
 		// if marker contains HTML, add it to an infoWindow
 		if ( $marker.innerHTML ) {
 			// create info window
-      let infowindow = new google.maps.InfoWindow( {
+			let infowindow = new google.maps.InfoWindow( {
 				content: $marker.innerHTML,
 			} );
 
@@ -55,11 +55,11 @@ class GMap {
 	} // end add_marker
 
 	center_map( map ) {
-    let bounds = new google.maps.LatLngBounds();
+		let bounds = new google.maps.LatLngBounds();
 
 		// loop through all markers and create bounds
 		map.markers.forEach( function ( marker ) {
-      let latlng = new google.maps.LatLng(
+			let latlng = new google.maps.LatLng(
 				marker.position.lat(),
 				marker.position.lng()
 			);
