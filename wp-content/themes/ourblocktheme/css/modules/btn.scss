@@ -4,95 +4,95 @@
 @use "../base/utility-classes" as util;
 
 .btn {
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 4px;
-  overflow: hidden;
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.19rem;
-  padding: 12px 24px;
-  border: none;
-  outline: none;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 4px;
+	overflow: hidden;
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.19rem;
+	padding: 12px 24px;
+	border: none;
+	outline: none;
 
-  &--small {
-    font-size: 0.88rem;
-    padding: 7px 13px;
-    font-weight: 300;
-  }
+	&--small {
+		font-size: 0.88rem;
+		padding: 7px 13px;
+		font-weight: 300;
+	}
 
-  &--with-photo {
-    padding-left: 40px;
-    position: relative;
-  }
+	&--with-photo {
+		padding-left: 40px;
+		position: relative;
+	}
 
-  &--orange {
-    background-color: var.$lightOrange;
-  }
+	&--orange {
+		background-color: var.$lightOrange;
+	}
 
-  &--orange:hover {
-    background: linear-gradient(var.$lightOrange, color.scale(var.$lightOrange, $lightness: -25%, $saturation: 100%));
-  }
+	&--orange:hover {
+		background: linear-gradient(var.$lightOrange, color.scale(var.$lightOrange, $lightness: -25%, $saturation: 100%));
+	}
 
-  &--dark-orange {
-    background-color: var.$darkOrange;
-  }
+	&--dark-orange {
+		background-color: var.$darkOrange;
+	}
 
-  &--dark-orange:hover {
-    background: linear-gradient(var.$darkOrange, color.scale(var.$darkOrange, $lightness: -35%, $saturation: 100%));
-  }
+	&--dark-orange:hover {
+		background: linear-gradient(var.$darkOrange, color.scale(var.$darkOrange, $lightness: -35%, $saturation: 100%));
+	}
 
-  &--blue {
-    background-color: var.$mainBlue;
-  }
+	&--blue {
+		background-color: var.$mainBlue;
+	}
 
-  &--blue:hover {
-    background: linear-gradient(color.scale(var.$mainBlue, $lightness: 11%), var.$mainBlue);
-  }
+	&--blue:hover {
+		background: linear-gradient(color.scale(var.$mainBlue, $lightness: 11%), var.$mainBlue);
+	}
 
-  &--yellow {
-    background-color: var.$mainYellow;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
-  }
+	&--yellow {
+		background-color: var.$mainYellow;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
+	}
 
-  &--yellow:hover {
-    background: linear-gradient(var.$mainYellow, color.scale(var.$mainYellow, $lightness: -29%, $saturation: 100%));
-  }
+	&--yellow:hover {
+		background: linear-gradient(var.$mainYellow, color.scale(var.$mainYellow, $lightness: -29%, $saturation: 100%));
+	}
 
-  &--beige {
-    background-color: var.$beige;
-    color: #173f58;
-  }
+	&--beige {
+		background-color: var.$beige;
+		color: #173f58;
+	}
 
-  &--beige:hover {
-    background-color: var.$mainYellow;
-  }
+	&--beige:hover {
+		background-color: var.$mainYellow;
+	}
 
-  &--gray {
-    background-color: #222;
-  }
+	&--gray {
+		background-color: #222;
+	}
 
-  &--white {
-    background-color: #fff;
-    color: #173f58;
-  }
+	&--white {
+		background-color: #fff;
+		color: #173f58;
+	}
 
-  &--white:hover {
-    background-color: #ddd;
-  }
+	&--white:hover {
+		background-color: #ddd;
+	}
 
-  &--large {
-    font-size: 1.3rem;
-    padding: 16px 34px;
-    border-radius: 7px;
-    @include base.atSmall {
-      font-size: 1.9rem;
-    }
-  }
+	&--large {
+		font-size: 1.3rem;
+		padding: 16px 34px;
+		border-radius: 7px;
+		@include base.atSmall {
+			font-size: 1.9rem;
+		}
+	}
 
-  &--inactive {
-    background-color: transparent;
-    cursor: default;
-    color: #333;
-  }
+	&--inactive {
+		background-color: transparent;
+		cursor: default;
+		color: #333;
+	}
 }

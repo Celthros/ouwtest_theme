@@ -38,7 +38,7 @@ pageBanner();
 					<a class="professor-card" href="<?php the_permalink(); ?>">
 						<?php if ( has_post_thumbnail() ): ?>
 							<img class="professor-card__image"
-							     src="<?php the_post_thumbnail_url( 'professorLandscape' ) ?>"
+							     src="<?php the_post_thumbnail_url( 'professorLandscape' ); ?>"
 							     alt="">
 						<?php else: ?>
 							<div class="professor-card__placeholder">
@@ -96,7 +96,7 @@ pageBanner();
 		<h2 class="headline headline--medium"><?php echo get_the_title(); ?> is Available At These Campuses:</h2>
 		<ul class="min-list link-list">
 			<?php foreach ( $relatedCampuses as $campus ) : ?>
-				<li><a href="<?php echo get_the_permalink( $campus ); ?>"><?php echo get_the_title( $campus ) ?></a>
+				<li><a href="<?php echo get_the_permalink( $campus ); ?>"><?php echo get_the_title( $campus ); ?></a>
 				</li>
 			<?php endforeach; ?>
 		</ul>

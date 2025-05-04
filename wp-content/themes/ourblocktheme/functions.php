@@ -93,6 +93,7 @@ function university_features(): void {
 add_action( 'after_setup_theme', 'university_features' );
 
 function university_adjust_queries( $query ): void {
+
 	if ( ! is_admin() && is_post_type_archive( 'campus' ) && $query->is_main_query() ) {
 		$query->set( 'posts_per_page', - 1 );
 	}
@@ -123,6 +124,7 @@ add_action( 'pre_get_posts', 'university_adjust_queries' );
 
 function universityMapKey( $api ): array {
 	$api['key'] = GOOGLE_MAP_API_KEY;
+
 	return $api;
 }
 
@@ -224,7 +226,7 @@ class PlaceholderBlock {
 	}
 }
 
-$placeBlocks = [
+$placeBlocks             = [
 	"eventsandblogs",
 	"header",
 	"footer",
