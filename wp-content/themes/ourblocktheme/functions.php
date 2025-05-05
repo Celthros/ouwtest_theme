@@ -304,3 +304,25 @@ new JSXBlock( 'genericheading' );
 new JSXBlock( 'genericbutton' );
 new JSXBlock( 'slideshow', true );
 new JSXBlock( 'slide', true, [ 'themeimagepath' => get_theme_file_uri( '/images/' ) ] );
+
+function myallowedBlocks( $allowed_block_types, $editor_context ) {
+
+	// if you are on a page/post editor screen
+	if ( ! empty( $editor_context->post ) ) {
+		return $allowed_block_types;
+	}
+
+	// if you are on a FSE block editor screen
+	if ( ! empty( $editor_context->block ) ) {
+		return $allowed_block_types;
+	}
+
+	// if you are on a Gutenberg editor screen
+	if ( ! empty( $editor_context->block_editor ) ) {
+		return $allowed_block_types;
+	}
+
+	return array( 'ourblocktheme/header', 'ourblocktheme/footer' );
+}
+
+//add_filter( 'allowed_block_types_all', 'myallowedBlocks', 10, 2 );
