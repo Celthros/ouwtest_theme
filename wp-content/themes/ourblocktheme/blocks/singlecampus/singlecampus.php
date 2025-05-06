@@ -15,7 +15,7 @@ pageBanner();
 	<?php
 	$mapLocation = get_field( 'map_location' );
 
-	if ( ! is_array( $mapLocation ) || ! isset( $mapLocation['lat'], $mapLocation['lng'] ) ) : ?>
+	if ( $mapLocation ) : ?>
 
 		<div class="acf-map">
 			<div class="marker" data-lat="<?php echo $mapLocation['lat'] ?>"
