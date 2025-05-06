@@ -100,7 +100,7 @@ li {
   text-align: left;
 }
 
-.t-center {
+.t-center, .text-center {
   text-align: center;
 }
 
