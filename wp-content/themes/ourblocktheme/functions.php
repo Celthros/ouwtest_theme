@@ -33,7 +33,7 @@ add_action( 'rest_api_init', 'university_custom_rest' );
 function pageBanner( $args = null ): void {
 
 	if ( ! isset( $args['title'] ) ) {
-		$args['title'] = get_the_title() ?? 'Our Block Theme';
+		$args['title'] = get_the_title() ?? get_bloginfo( 'name' );
 	}
 
 	if ( ! isset( $args['subtitle'] ) ) {
