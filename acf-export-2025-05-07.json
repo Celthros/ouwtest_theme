@@ -1,0 +1,282 @@
+[
+    {
+        "key": "group_680b553dc7ca8",
+        "title": "Page Banner",
+        "fields": [
+            {
+                "key": "field_680b553d9bd2a",
+                "label": "Page Banner Subtitle",
+                "name": "page_banner_subtitle",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Header Background Title & Image",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "Header Overlay Text",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_680b55679bd2b",
+                "label": "Page Banner Background Image",
+                "name": "page_banner_background_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "allow_in_bindings": 0,
+                "preview_size": "medium"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "!=",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "field",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Header Background Title & Image",
+        "show_in_rest": 1
+    },
+    {
+        "key": "group_67ec733eef763",
+        "title": "Event Date",
+        "fields": [
+            {
+                "key": "field_67ec733f75fec",
+                "label": "Event Date",
+                "name": "event_date",
+                "aria-label": "",
+                "type": "date_picker",
+                "instructions": "The date the event is happening",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "event_date",
+                    "id": "event_date"
+                },
+                "display_format": "F j, Y",
+                "return_format": "Ymd",
+                "first_day": 1,
+                "allow_in_bindings": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "event"
+                }
+            ]
+        ],
+        "menu_order": 1,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "The date the event is happening",
+        "show_in_rest": 1
+    },
+    {
+        "key": "group_6811f5efad7f2",
+        "title": "Map Location",
+        "fields": [
+            {
+                "key": "field_6811f5ef966b2",
+                "label": "Map Location",
+                "name": "map_location",
+                "aria-label": "",
+                "type": "google_map",
+                "instructions": "Add Longitude and Latitude Coordinates in order for the campus to display on the map.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "100",
+                    "class": "map_location",
+                    "id": "map_location"
+                },
+                "center_lat": "",
+                "center_lng": "",
+                "zoom": "",
+                "height": "",
+                "allow_in_bindings": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "campus"
+                }
+            ]
+        ],
+        "menu_order": 1,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Map used for Campus locations",
+        "show_in_rest": 1
+    },
+    {
+        "key": "group_68178fe58560c",
+        "title": "Related Campus(es)",
+        "fields": [
+            {
+                "key": "field_68178fe5a34ed",
+                "label": "Related Campus(es)",
+                "name": "related_campus",
+                "aria-label": "",
+                "type": "relationship",
+                "instructions": "Display Related Programs for each campus",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "campus"
+                ],
+                "post_status": "",
+                "taxonomy": "",
+                "filters": [
+                    "search"
+                ],
+                "return_format": "object",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 0,
+                "elements": "",
+                "bidirectional": 0,
+                "bidirectional_target": []
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "program"
+                }
+            ]
+        ],
+        "menu_order": 1,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "field",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Display Related Programs for each campus",
+        "show_in_rest": 1
+    },
+    {
+        "key": "group_67f5bf22b8d34",
+        "title": "Related Program",
+        "fields": [
+            {
+                "key": "field_67f5bf2205f02",
+                "label": "Related Program(s)",
+                "name": "related_programs",
+                "aria-label": "",
+                "type": "relationship",
+                "instructions": "Related Programs with the event",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "related_program",
+                    "id": "related_program"
+                },
+                "post_type": [
+                    "program"
+                ],
+                "post_status": "",
+                "taxonomy": "",
+                "filters": [
+                    "search"
+                ],
+                "return_format": "object",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 0,
+                "elements": "",
+                "bidirectional": 0,
+                "bidirectional_target": []
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "event"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "professor"
+                }
+            ]
+        ],
+        "menu_order": 1,
+        "position": "side",
+        "style": "seamless",
+        "label_placement": "left",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Related Programs with Events",
+        "show_in_rest": 1
+    }
+]

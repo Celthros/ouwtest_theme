@@ -1,0 +1,26 @@
+﻿ID,Title,Content,Excerpt,Date,"Post Type",Permalink,"Image URL","Image Title","Image Caption","Image Description","Image Alt Text","Image Featured","Attachment URL",related_programs,_related_programs,_thumbnail_id,page_banner_subtitle,_page_banner_subtitle,page_banner_background_image,_page_banner_background_image,Status,"Author ID","Author Username","Author Email","Author First Name","Author Last Name",Slug,Format,Template,Parent,"Parent Slug",Order,"Comment Status","Ping Status","Post Modified Date"
+171,"Dr. Meowsalot","<!-- wp:paragraph -->
+<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",,"2025-04-11 00:53:35",professor,http://ouw-test-theme.local/professor/dr-meowsalot/,http://ouw-test-theme.local/wp-content/uploads/2025/04/meowsalot-scaled.jpg,meowsalot,,,,http://ouw-test-theme.local/wp-content/uploads/2025/04/meowsalot-scaled.jpg,,"a:2:{i:0;s:3:""149"";i:1;s:3:""145"";}",field_67f5bf2205f02,176,,,,,publish,1,anderson,tander1001@gmail.com,,,dr-meowsalot,,,0,0,0,closed,closed,"2025-04-23 22:35:22"
+172,"Dr. Barksalot","<!-- wp:paragraph -->
+<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+<!-- /wp:paragraph -->",,"2025-04-11 00:53:59",professor,http://ouw-test-theme.local/professor/dr-barksalot/,http://ouw-test-theme.local/wp-content/uploads/2025/04/barksalot-scaled.jpg|http://ouw-test-theme.local/wp-content/uploads/2025/04/field-scaled.jpg,"professor barksalot|field",|,|,"professor barksalot|",http://ouw-test-theme.local/wp-content/uploads/2025/04/barksalot-scaled.jpg,,"a:1:{i:0;s:3:""145"";}",field_67f5bf2205f02,175,"The Leading Voice in Barking & Biology",field_680b553d9bd2a,186,field_680b55679bd2b,publish,1,anderson,tander1001@gmail.com,,,dr-barksalot,,,0,0,0,closed,closed,"2025-04-25 09:36:11"
+180,"Dr. Froggerson","<!-- wp:paragraph -->
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<!-- /wp:paragraph -->",,"2025-04-24 00:13:28",professor,http://ouw-test-theme.local/professor/dr-froggerson/,http://ouw-test-theme.local/wp-content/uploads/2025/04/frog-bio-scaled.jpg,frog-bio,,,,http://ouw-test-theme.local/wp-content/uploads/2025/04/frog-bio-scaled.jpg,,"a:4:{i:0;s:3:""145"";i:1;s:3:""157"";i:2;s:3:""159"";i:3;s:3:""148"";}",field_67f5bf2205f02,181,,,,,publish,1,anderson,tander1001@gmail.com,,,dr-froggerson,,,0,0,0,closed,closed,"2025-04-24 00:13:28"
