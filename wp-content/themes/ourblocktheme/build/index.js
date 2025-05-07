@@ -4926,15 +4926,6 @@ class Axios {
       }
     }
 
-    // Set config.allowAbsoluteUrls
-    if (config.allowAbsoluteUrls !== undefined) {
-      // do nothing
-    } else if (this.defaults.allowAbsoluteUrls !== undefined) {
-      config.allowAbsoluteUrls = this.defaults.allowAbsoluteUrls;
-    } else {
-      config.allowAbsoluteUrls = true;
-    }
-
     _helpers_validator_js__WEBPACK_IMPORTED_MODULE_0__["default"].assertOptions(config, {
       baseUrl: validators.spelling('baseURL'),
       withXsrfToken: validators.spelling('withXSRFToken')
@@ -5030,7 +5021,7 @@ class Axios {
 
   getUri(config) {
     config = (0,_mergeConfig_js__WEBPACK_IMPORTED_MODULE_2__["default"])(this.defaults, config);
-    const fullPath = (0,_buildFullPath_js__WEBPACK_IMPORTED_MODULE_6__["default"])(config.baseURL, config.url, config.allowAbsoluteUrls);
+    const fullPath = (0,_buildFullPath_js__WEBPACK_IMPORTED_MODULE_6__["default"])(config.baseURL, config.url);
     return (0,_helpers_buildURL_js__WEBPACK_IMPORTED_MODULE_7__["default"])(fullPath, config.params, config.paramsSerializer);
   }
 }
@@ -5622,9 +5613,8 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @returns {string} The combined full path
  */
-function buildFullPath(baseURL, requestedURL, allowAbsoluteUrls) {
-  let isRelativeUrl = !(0,_helpers_isAbsoluteURL_js__WEBPACK_IMPORTED_MODULE_0__["default"])(requestedURL);
-  if (baseURL && (isRelativeUrl || allowAbsoluteUrls == false)) {
+function buildFullPath(baseURL, requestedURL) {
+  if (baseURL && !(0,_helpers_isAbsoluteURL_js__WEBPACK_IMPORTED_MODULE_0__["default"])(requestedURL)) {
     return (0,_helpers_combineURLs_js__WEBPACK_IMPORTED_MODULE_1__["default"])(baseURL, requestedURL);
   }
   return requestedURL;
@@ -6156,7 +6146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   VERSION: () => (/* binding */ VERSION)
 /* harmony export */ });
-const VERSION = "1.8.4";
+const VERSION = "1.7.9";
 
 /***/ }),
 
@@ -6976,7 +6966,7 @@ __webpack_require__.r(__webpack_exports__);
 
   newConfig.headers = headers = _core_AxiosHeaders_js__WEBPACK_IMPORTED_MODULE_1__["default"].from(headers);
 
-  newConfig.url = (0,_buildURL_js__WEBPACK_IMPORTED_MODULE_2__["default"])((0,_core_buildFullPath_js__WEBPACK_IMPORTED_MODULE_3__["default"])(newConfig.baseURL, newConfig.url, newConfig.allowAbsoluteUrls), config.params, config.paramsSerializer);
+  newConfig.url = (0,_buildURL_js__WEBPACK_IMPORTED_MODULE_2__["default"])((0,_core_buildFullPath_js__WEBPACK_IMPORTED_MODULE_3__["default"])(newConfig.baseURL, newConfig.url), config.params, config.paramsSerializer);
 
   // HTTP basic authentication
   if (auth) {
@@ -8463,6 +8453,26 @@ const toFiniteNumber = (value, defaultValue) => {
   return value != null && Number.isFinite(value = +value) ? value : defaultValue;
 }
 
+const ALPHA = 'abcdefghijklmnopqrstuvwxyz'
+
+const DIGIT = '0123456789';
+
+const ALPHABET = {
+  DIGIT,
+  ALPHA,
+  ALPHA_DIGIT: ALPHA + ALPHA.toUpperCase() + DIGIT
+}
+
+const generateString = (size = 16, alphabet = ALPHABET.ALPHA_DIGIT) => {
+  let str = '';
+  const {length} = alphabet;
+  while (size--) {
+    str += alphabet[Math.random() * length|0]
+  }
+
+  return str;
+}
+
 /**
  * If the thing is a FormData object, return true, otherwise return false.
  *
@@ -8590,6 +8600,8 @@ const asap = typeof queueMicrotask !== 'undefined' ?
   findKey,
   global: _global,
   isContextDefined,
+  ALPHABET,
+  generateString,
   isSpecCompliantForm,
   toJSONObject,
   isAsyncFn,
@@ -8668,7 +8680,8 @@ class GMap {
     let args = {
       zoom: 16,
       center: new google.maps.LatLng(0, 0),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapId: '4c154dc00bf66eef7c4d20c9'
     };
     let map = new google.maps.Map($el, args);
     map.markers = [];
@@ -8685,7 +8698,7 @@ class GMap {
 
   add_marker($marker, map) {
     let latlng = new google.maps.LatLng($marker.getAttribute('data-lat'), $marker.getAttribute('data-lng'));
-    let marker = new google.maps.Marker({
+    let marker = new google.maps.marker.AdvancedMarkerElement({
       position: latlng,
       map: map
     });
@@ -8699,18 +8712,24 @@ class GMap {
       });
 
       // show info window when marker is clicked
-      google.maps.event.addListener(marker, 'click', function () {
+      marker.addEventListener('click', () => {
         infowindow.open(map, marker);
       });
     }
-  } // end add_marker
-
+  }
   center_map(map) {
     let bounds = new google.maps.LatLngBounds();
 
     // loop through all markers and create bounds
     map.markers.forEach(function (marker) {
-      let latlng = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
+      let latlng;
+
+      // Ensure marker.position is a LatLng object
+      if (typeof marker.position.lat === 'function') {
+        latlng = marker.position;
+      } else {
+        latlng = new google.maps.LatLng(marker.position.lat, marker.position.lng);
+      }
       bounds.extend(latlng);
     });
 
@@ -8723,7 +8742,7 @@ class GMap {
       // fit to bounds
       map.fitBounds(bounds);
     }
-  } // end center_map
+  }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GMap);
 

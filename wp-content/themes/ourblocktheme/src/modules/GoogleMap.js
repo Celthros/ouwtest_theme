@@ -12,6 +12,7 @@ class GMap {
 			zoom: 16,
 			center: new google.maps.LatLng( 0, 0 ),
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			mapId: '4c154dc00bf66eef7c4d20c9',
 		};
 
 		let map = new google.maps.Map( $el, args );
@@ -33,7 +34,7 @@ class GMap {
 			$marker.getAttribute( 'data-lng' )
 		);
 
-		let marker = new google.maps.Marker( {
+		let marker = new google.maps.marker.AdvancedMarkerElement({
 			position: latlng,
 			map: map,
 		} );
@@ -48,21 +49,28 @@ class GMap {
 			} );
 
 			// show info window when marker is clicked
-			google.maps.event.addListener( marker, 'click', function () {
+			marker.addEventListener('click', () => {
 				infowindow.open( map, marker );
 			} );
 		}
-	} // end add_marker
+	}
 
 	center_map( map ) {
 		let bounds = new google.maps.LatLngBounds();
 
 		// loop through all markers and create bounds
 		map.markers.forEach( function ( marker ) {
-			let latlng = new google.maps.LatLng(
-				marker.position.lat(),
-				marker.position.lng()
-			);
+			let latlng;
+
+			// Ensure marker.position is a LatLng object
+			if (typeof marker.position.lat === 'function') {
+				latlng = marker.position;
+			} else {
+				latlng = new google.maps.LatLng(
+					marker.position.lat,
+					marker.position.lng
+				);
+			}
 
 			bounds.extend( latlng );
 		} );
@@ -76,7 +84,7 @@ class GMap {
 			// fit to bounds
 			map.fitBounds( bounds );
 		}
-	} // end center_map
+	}
 }
 
 export default GMap;
