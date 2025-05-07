@@ -9,8 +9,6 @@
 //Autoload::init();
 
 const GOOGLE_MAP_API_KEY = 'AIzaSyBRRnSwouBfAyhQ47rfDX0NMPcqiQ1Qm4s';
-const importkey1 = '9cb4c5886503f9ff626b5d9a8964b5ac';
-const exportkey1 = '2b5e50ee3885160dc48c788874edb707';
 
 require get_theme_file_path( '/inc/like-route.php' );
 require get_theme_file_path( '/inc/search-route.php' );
