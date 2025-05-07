@@ -28,30 +28,36 @@ class GMap {
 		this.center_map( map );
 	} // end new_map
 
-	add_marker( $marker, map ) {
+	add_marker($marker, map) {
 		let latlng = new google.maps.LatLng(
-			$marker.getAttribute( 'data-lat' ),
-			$marker.getAttribute( 'data-lng' )
+			$marker.getAttribute('data-lat'),
+			$marker.getAttribute('data-lng')
 		);
 
 		let marker = new google.maps.marker.AdvancedMarkerElement({
 			position: latlng,
 			map: map,
-		} );
+		});
 
-		map.markers.push( marker );
+		map.markers.push(marker);
 
-		// if marker contains HTML, add it to an infoWindow
-		if ( $marker.innerHTML ) {
-			// create info window
-			let infowindow = new google.maps.InfoWindow( {
+		if ($marker.innerHTML) {
+			let headerElement = document.createElement('div');
+			headerElement.innerHTML = 'Custom Header';
+			headerElement.classList.add('gm-title');
+			let infowindow = new google.maps.InfoWindow({
+				headerContent: headerElement,
 				content: $marker.innerHTML,
-			} );
+			});
 
-			// show info window when marker is clicked
-			marker.addEventListener('click', () => {
-				infowindow.open( map, marker );
-			} );
+			// Ensure the event listener is properly attached
+			marker.addListener('click', () => {
+				infowindow.open({
+					anchor: marker,
+					map: map,
+					shouldFocus: false,
+				});
+			});
 		}
 	}
 
