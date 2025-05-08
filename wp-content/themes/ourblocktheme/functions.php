@@ -229,7 +229,7 @@ class PlaceholderBlock {
 $placeBlocks             = [
 	"eventsandblogs",
 	"header",
-	"footer",
+	//"footer",
 	"singlepost",
 	"page",
 	"blogindex",
