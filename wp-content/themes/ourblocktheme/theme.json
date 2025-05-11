@@ -1,81 +1,84 @@
 {
-	"version": 2,
-	"styles": {
-		"blocks": {
-			"core/button": {
-				"color": {
-					"text": "#fff",
-					"background": "var(--wp--preset--color--primary)"
-				}
-			}
-		}
-	},
-	"settings": {
-		"typography": {
-			"fontFamilies": [],
-			"fontStyle": false,
-			"fontWeight": false,
-			"letterSpacing": false,
-			"textDecoration": false,
-			"lineHeight": false,
-			"textTransform": false,
-			"dropCap": false,
-			"customFontSize": false,
-			"fontSizes": []
-		},
-		"blocks": {
-			"core/button": {
-				"border": {
-					"color": false,
-					"radius": false,
-					"style": false,
-					"width": false
-				}
-			}
-		},
-		"color": {
-			"background": true,
-			"text": false,
-			"link": false,
-			"custom": false,
-			"defaultPalette": false,
-			"duotone": [],
-			"customDuotone": false,
-			"gradients": [],
-			"customGradient": false,
-			"palette": [
-				{
-					"slug": "primary",
-					"color": "#0d3b66",
-					"name": "Primary"
-				},
-				{
-					"slug": "secondary",
-					"color": "#ee964b",
-					"name": "Secondary"
-				},
-				{
-					"slug": "background",
-					"color": "#FFFFFF",
-					"name": "Background"
-				},
-				{
-					"slug": "foreground",
-					"color": "#333333",
-					"name": "Foreground"
-				}
-			]
-		},
-		"layout": {
-			"contentSize": "840px",
-			"wideSize": "1200px"
-		}
-	},
-	"customTemplates": [
-		{
-			"name": "emptycanvas",
-			"postTypes": [ "page" ],
-			"title": "Empty Canvas"
-		}
-	]
+  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/wp/6.8/schemas/json/theme.json",
+  "version": 3,
+  "styles": {
+    "blocks": {
+      "core/button": {
+        "color": {
+          "text": "#fff",
+          "background": "var(--wp--preset--color--primary)"
+        }
+      }
+    }
+  },
+  "settings": {
+    "typography": {
+      "fontFamilies": [],
+      "features": {
+        "fontStyle": false,
+        "fontWeight": false,
+        "letterSpacing": false,
+        "textDecoration": false,
+        "lineHeight": false,
+        "textTransform": false,
+        "dropCap": false
+      },
+      "customFontSize": false,
+      "fontSizes": []
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "color": false,
+          "radius": false,
+          "style": false,
+          "width": false
+        }
+      }
+    },
+    "color": {
+      "background": true,
+      "text": false,
+      "link": false,
+      "custom": false,
+      "defaultPalette": false,
+      "duotone": [],
+      "customDuotone": false,
+      "gradients": [],
+      "customGradient": false,
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#0d3b66",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#ee964b",
+          "name": "Secondary"
+        },
+        {
+          "slug": "background",
+          "color": "#FFFFFF",
+          "name": "Background"
+        },
+        {
+          "slug": "foreground",
+          "color": "#333333",
+          "name": "Foreground"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "840px",
+      "wideSize": "1200px"
+    }
+  },
+  "customTemplates": [
+    {
+      "name": "emptycanvas",
+      "postTypes": [ "page" ],
+      "title": "Empty Canvas"
+    }
+  ]
 }
