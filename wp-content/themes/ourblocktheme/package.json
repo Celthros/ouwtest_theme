@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "wp-scripts build",
 		"start": "wp-scripts start src/index.js blocks/banner/banner.js blocks/genericheading/genericheading.js blocks/genericbutton/genericbutton.js blocks/slideshow/slideshow.js blocks/slide/slide.js",
-    "blocks": "wp-scripts start --experimental-modules",
+		"blocks": "wp-scripts start --experimental-modules",
 		"dev": "wp-scripts start",
 		"devFast": "wp-scripts start",
 		"format": "wp-scripts format",
@@ -35,7 +35,7 @@
 		"@wordpress/block-editor": "^14.12.0",
 		"@wordpress/blocks": "^14.6.0",
 		"@wordpress/components": "^24.0.0",
-    "@wordpress/scripts": "^30.10.0",
-    "webpack-cli": "^6.0.1"
+		"@wordpress/scripts": "^30.10.0",
+		"webpack-cli": "^6.0.1"
 	}
 }

@@ -226,9 +226,26 @@ class PlaceholderBlock {
 	}
 }
 
+function our_new_blocks(): void {
+
+	$ourBlocks = [
+		"footer",
+		"header",
+		"eventsandblogs"
+	];
+
+	foreach ( $ourBlocks as $ourBlock ) {
+		register_block_type_from_metadata( __DIR__ . "/build/" . $ourBlock );
+	}
+
+
+}
+
+add_action( 'init', 'our_new_blocks' );
+
 $placeBlocks             = [
-	"eventsandblogs",
-	"header",
+	//"eventsandblogs",
+	//"header",
 	//"footer",
 	"singlepost",
 	"page",

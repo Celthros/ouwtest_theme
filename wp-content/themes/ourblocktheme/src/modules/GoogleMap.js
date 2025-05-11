@@ -28,36 +28,36 @@ class GMap {
 		this.center_map( map );
 	} // end new_map
 
-	add_marker($marker, map) {
+	add_marker( $marker, map ) {
 		let latlng = new google.maps.LatLng(
-			$marker.getAttribute('data-lat'),
-			$marker.getAttribute('data-lng')
+			$marker.getAttribute( 'data-lat' ),
+			$marker.getAttribute( 'data-lng' )
 		);
 
-		let marker = new google.maps.marker.AdvancedMarkerElement({
+		let marker = new google.maps.marker.AdvancedMarkerElement( {
 			position: latlng,
 			map: map,
-		});
+		} );
 
-		map.markers.push(marker);
+		map.markers.push( marker );
 
-		if ($marker.innerHTML) {
-			let headerElement = document.createElement('div');
+		if ( $marker.innerHTML ) {
+			let headerElement = document.createElement( 'div' );
 			headerElement.innerHTML = 'Custom Header';
-			headerElement.classList.add('gm-title');
-			let infowindow = new google.maps.InfoWindow({
+			headerElement.classList.add( 'gm-title' );
+			let infowindow = new google.maps.InfoWindow( {
 				headerContent: headerElement,
 				content: $marker.innerHTML,
-			});
+			} );
 
 			// Ensure the event listener is properly attached
-			marker.addListener('click', () => {
-				infowindow.open({
+			marker.addListener( 'click', () => {
+				infowindow.open( {
 					anchor: marker,
 					map: map,
 					shouldFocus: false,
-				});
-			});
+				} );
+			} );
 		}
 	}
 
@@ -69,7 +69,7 @@ class GMap {
 			let latlng;
 
 			// Ensure marker.position is a LatLng object
-			if (typeof marker.position.lat === 'function') {
+			if ( typeof marker.position.lat === 'function' ) {
 				latlng = marker.position;
 			} else {
 				latlng = new google.maps.LatLng(
