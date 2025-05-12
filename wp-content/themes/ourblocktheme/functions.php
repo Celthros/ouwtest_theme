@@ -228,7 +228,11 @@ class PlaceholderBlock {
 
 function our_new_blocks(): void {
 
+	wp_localize_script( 'wp-editor', 'ourThemeData', array( 'themePath' =>  get_stylesheet_directory_uri() ) );
+
 	$ourBlocks = [
+		"archive",
+		"banner",
 		"footer",
 		"header",
 		"eventsandblogs"
@@ -244,14 +248,10 @@ function our_new_blocks(): void {
 add_action( 'init', 'our_new_blocks' );
 
 $placeBlocks             = [
-	//"eventsandblogs",
-	//"header",
-	//"footer",
 	"singlepost",
 	"page",
 	"blogindex",
 	"programarchive",
-	"archive",
 	"archivecampus",
 	"archive-event",
 	"search",
@@ -316,7 +316,7 @@ class JSXBlock {
 
 }
 
-new JSXBlock( 'banner', true, [ 'fallbackimage' => get_theme_file_uri( '/images/library-hero.jpg' ) ] );
+//new JSXBlock( 'banner', true, [ 'fallbackimage' => get_theme_file_uri( '/images/library-hero.jpg' ) ] );
 new JSXBlock( 'genericheading' );
 new JSXBlock( 'genericbutton' );
 new JSXBlock( 'slideshow', true );
