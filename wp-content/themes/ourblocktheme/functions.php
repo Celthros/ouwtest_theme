@@ -194,43 +194,25 @@ function makeNotePrivate( $data, $postarr ): array {
 	return $data;
 }
 
-/**
- * @property string $name
- */
-class PlaceholderBlock {
-
-	public string $name;
-
-	function __construct( $name ) {
-		$this->name = $name;
-		add_action( 'init', array( $this, 'onInit' ) );
-	}
-
-	function ourRenderCallback( $attributes, $content ): false|string {
-		ob_start();
-		require get_theme_file_path( "blocks/{$this->name}/{$this->name}.php" );
-
-		return ob_get_clean();
-	}
-
-	public function onInit(): void {
-		wp_register_script( $this->name, get_stylesheet_directory_uri() . "/blocks/{$this->name}/{$this->name}.js", array(
-			'wp-blocks',
-			'wp-editor',
-		) );
-
-		register_block_type( "ourblocktheme/{$this->name}", array(
-			'editor_script'   => $this->name,
-			'render_callback' => [ $this, 'ourRenderCallback' ],
-		) );
-	}
-}
-
 function our_new_blocks(): void {
 
 	wp_localize_script( 'wp-editor', 'ourThemeData', array( 'themePath' =>  get_stylesheet_directory_uri() ) );
 
 	$ourBlocks = [
+		"page",
+		"blogindex",
+		"programarchive",
+		"archivecampus",
+		"archive-event",
+		"search",
+		"searchresults",
+		"singlecampus",
+		"singleevent",
+		"singleprofessor",
+		"singleprogram",
+		"pastevents",
+		"mynotes",
+		"singlepost",
 		"archive",
 		"banner",
 		"footer",
@@ -242,31 +224,9 @@ function our_new_blocks(): void {
 		register_block_type_from_metadata( __DIR__ . "/build/" . $ourBlock );
 	}
 
-
 }
 
 add_action( 'init', 'our_new_blocks' );
-
-$placeBlocks             = [
-	"singlepost",
-	"page",
-	"blogindex",
-	"programarchive",
-	"archivecampus",
-	"archive-event",
-	"search",
-	"searchresults",
-	"singlecampus",
-	"singleevent",
-	"singleprofessor",
-	"singleprogram",
-	"pastevents",
-	"mynotes",
-];
-
-foreach ( $placeBlocks as $placeBlock ) {
-	new PlaceholderBlock( $placeBlock );
-}
 
 /**
  * @property string $name
