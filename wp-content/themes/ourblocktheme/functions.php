@@ -199,6 +199,7 @@ function our_new_blocks(): void {
 	wp_localize_script( 'wp-editor', 'ourThemeData', array( 'themePath' =>  get_stylesheet_directory_uri() ) );
 
 	$ourBlocks = [
+		"slide",
 		"page",
 		"blogindex",
 		"programarchive",
@@ -276,11 +277,9 @@ class JSXBlock {
 
 }
 
-//new JSXBlock( 'banner', true, [ 'fallbackimage' => get_theme_file_uri( '/images/library-hero.jpg' ) ] );
 new JSXBlock( 'genericheading' );
 new JSXBlock( 'genericbutton' );
 new JSXBlock( 'slideshow', true );
-new JSXBlock( 'slide', true, [ 'themeimagepath' => get_theme_file_uri( '/images/' ) ] );
 
 function myallowedBlocks( $allowed_block_types, $editor_context ) {
 

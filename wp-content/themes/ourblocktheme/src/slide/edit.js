@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { Button, PanelBody, PanelRow } from '@wordpress/components';
 import {
+	useBlockProps,
 	InnerBlocks,
 	InspectorControls,
 	MediaUpload,
@@ -8,27 +9,22 @@ import {
 } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import metadata from './block.json';
 
-registerBlockType( 'ourblocktheme/slide', {
-	title: 'Slide',
-	supports: {
-		align: [ 'full' ],
-	},
-	attributes: {
-		themeimage: { type: 'string' },
-		align: { type: 'string', default: 'full' },
-		imgID: { type: 'number' },
-		imgURL: { type: 'string', default: banner.fallbackimage },
-	},
-	edit: EditComponent,
-	save: SaveComponent,
-} );
+export default function Edit( props ) {
+	const blockProps = useBlockProps();
+	const title = metadata.title;
 
-function EditComponent( props ) {
 	useEffect( function () {
 		if ( props.attributes.themeimage ) {
 			props.setAttributes( {
-				imgURL: `${ slide.themeimagepath }${ props.attributes.themeimage }`,
+				imgURL: `${ ourThemeData.themePath }/images/${ props.attributes.themeimage }`,
+			} );
+		}
+		if( ! props.attributes.themeimage && ! props.attributes.imgURL ){
+			props.setAttributes( {
+				imgURL: `${ ourThemeData.themePath }/images/library-hero.jpg`,
 			} );
 		}
 	}, [] );
@@ -80,27 +76,25 @@ function EditComponent( props ) {
 				</PanelBody>
 			</InspectorControls>
 
-			<div
-				className="hero-slider__slide"
-				style={ {
-					backgroundImage: `url('${ props.attributes.imgURL }')`,
-				} }
-			>
-				<div className="hero-slider__interior container">
-					<div className="hero-slider__overlay t-center">
-						<InnerBlocks
-							allowedBlocks={ [
-								'ourblocktheme/genericheading',
-								'ourblocktheme/genericbutton',
-							] }
-						/>
+			<div {...blockProps}>
+				<div
+					className="hero-slider__slide"
+					style={ {
+						backgroundImage: `url('${ props.attributes.imgURL }')`,
+					} }
+				>
+					<div className="hero-slider__interior container">
+						<div className="hero-slider__overlay t-center">
+							<InnerBlocks
+								allowedBlocks={ [
+									'ourblocktheme/genericheading',
+									'ourblocktheme/genericbutton',
+								] }
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
 		</>
 	);
-}
-
-function SaveComponent() {
-	return <InnerBlocks.Content />;
 }
