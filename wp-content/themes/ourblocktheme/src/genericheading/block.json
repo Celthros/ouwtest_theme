@@ -2,8 +2,14 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "ourblocktheme/genericheading",
-	"title": "Fictional University Generic Heading",
-	"attributes": {
+	"title": "Generic Heading",
+  "keyword": [
+    "heading",
+    "header",
+    "text"
+  ],
+  "category": "text",
+  "attributes": {
 		"text": { "type": "string" },
 		"size": { "type": "string", "default": "large" }
 	},

@@ -6,11 +6,9 @@ import {
 import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import metadata from './block.json';
-import { registerBlockType } from '@wordpress/blocks';
 
 export default function Edit( props ) {
 	const blockProps = useBlockProps();
-	const title = metadata.title;
 
 	function handleTextChange( x ) {
 		props.setAttributes( { text: x } );

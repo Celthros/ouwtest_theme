@@ -51,7 +51,7 @@ function Edit(props) {
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
     if (!props.attributes.imgURL) {
       props.setAttributes({
-        imgURL: ourThemeData.themePath + "/images/library-hero.jpg"
+        imgURL: ourThemeData.themePath + '/images/library-hero.jpg'
       });
     }
   }, []);

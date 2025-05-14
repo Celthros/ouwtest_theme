@@ -1,5 +1,11 @@
-import ourColors from '../../inc/ourColors';
-import { link } from '@wordpress/icons';
+import {
+	useBlockProps,
+	RichText,
+	BlockControls,
+	InspectorControls,
+	__experimentalLinkControl as LinkControl,
+	getColorObjectByColorValue,
+} from '@wordpress/block-editor';
 import {
 	ToolbarGroup,
 	ToolbarButton,
@@ -9,29 +15,17 @@ import {
 	PanelRow,
 	ColorPalette,
 } from '@wordpress/components';
-import {
-	RichText,
-	BlockControls,
-	InspectorControls,
-	__experimentalLinkControl as LinkControl,
-	getColorObjectByColorValue,
-} from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
+import metadata from './block.json';
 import { registerBlockType } from '@wordpress/blocks';
-import { useState } from '@wordpress/element';
+import {useState} from "@wordpress/element";
+import ourColors from "../../inc/ourColors";
+import { link } from '@wordpress/icons';
 
-registerBlockType( 'ourblocktheme/genericbutton', {
-	title: 'Generic Button',
-	attributes: {
-		text: { type: 'string' },
-		size: { type: 'string', default: 'large' },
-		linkObject: { type: 'object', default: { url: '' } },
-		colorName: { type: 'string', default: 'blue' },
-	},
-	edit: EditComponent,
-	save: SaveComponent,
-} );
 
-function EditComponent( props ) {
+export default function Edit( props ) {
+	const blockProps = useBlockProps();
+	const title = metadata.title;
 	const [ isLinkPickerVisible, setIsLinkPickerVisible ] = useState( false );
 
 	function handleTextChange( x ) {
@@ -57,7 +51,7 @@ function EditComponent( props ) {
 	}
 
 	return (
-		<>
+		<div { ...blockProps }>
 			<BlockControls>
 				<ToolbarGroup>
 					<ToolbarButton onClick={ buttonHandler } icon={ link } />
@@ -128,17 +122,6 @@ function EditComponent( props ) {
 					</Button>
 				</Popover>
 			) }
-		</>
-	);
-}
-
-function SaveComponent( props ) {
-	return (
-		<a
-			href={ props.attributes.linkObject.url }
-			className={ `btn btn--${ props.attributes.size } btn--${ props.attributes.colorName }` }
-		>
-			{ props.attributes.text }
-		</a>
+		</div>
 	);
 }
