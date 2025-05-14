@@ -22,7 +22,7 @@ export default function Edit( props ) {
 				imgURL: `${ ourThemeData.themePath }/images/${ props.attributes.themeimage }`,
 			} );
 		}
-		if( ! props.attributes.themeimage && ! props.attributes.imgURL ){
+		if ( ! props.attributes.themeimage && ! props.attributes.imgURL ) {
 			props.setAttributes( {
 				imgURL: `${ ourThemeData.themePath }/images/library-hero.jpg`,
 			} );
@@ -76,7 +76,7 @@ export default function Edit( props ) {
 				</PanelBody>
 			</InspectorControls>
 
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<div
 					className="hero-slider__slide"
 					style={ {

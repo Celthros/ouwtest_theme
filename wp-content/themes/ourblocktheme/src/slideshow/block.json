@@ -3,12 +3,12 @@
 	"apiVersion": 3,
 	"name": "ourblocktheme/slideshow",
 	"title": "Fictional University Slide Show",
-  "supports": {
-    "align": [ "full" ]
-  },
-  "attributes": {
-    "align": { "type": "string", "default": "full" }
-  },
+	"supports": {
+		"align": [ "full" ]
+	},
+	"attributes": {
+		"align": { "type": "string", "default": "full" }
+	},
 	"editorScript": "file:./index.js",
 	"render": "file:./render.php"
 }

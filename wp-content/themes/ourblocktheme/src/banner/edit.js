@@ -16,13 +16,13 @@ export default function Edit( props ) {
 	const blockProps = useBlockProps();
 	const title = metadata.title;
 
-	useEffect(() => {
+	useEffect( () => {
 		if ( ! props.attributes.imgURL ) {
-			props.setAttributes ( {
-				imgURL: ourThemeData.themePath + "/images/library-hero.jpg"
+			props.setAttributes( {
+				imgURL: ourThemeData.themePath + '/images/library-hero.jpg',
 			} );
 		}
-	}, []);
+	}, [] );
 
 	useEffect(
 		function () {
