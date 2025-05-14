@@ -18,10 +18,9 @@ import {
 import { __ } from '@wordpress/i18n';
 import metadata from './block.json';
 import { registerBlockType } from '@wordpress/blocks';
-import {useState} from "@wordpress/element";
-import ourColors from "../../inc/ourColors";
+import { useState } from '@wordpress/element';
+import ourColors from '../../inc/ourColors';
 import { link } from '@wordpress/icons';
-
 
 export default function Edit( props ) {
 	const blockProps = useBlockProps();

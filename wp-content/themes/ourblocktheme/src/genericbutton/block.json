@@ -3,17 +3,14 @@
 	"apiVersion": 3,
 	"name": "ourblocktheme/genericbutton",
 	"title": "Fictional University Generic Button",
-  "keyword": [
-    "button",
-    "generic"
-  ],
-  "category": "design",
-  "attributes": {
-    "text": { "type": "string" },
-    "align": { "type": "string", "default": "full" },
-    "size": { "type": "string", "default": "large" },
-    "linkObject": { "type": "object", "default": { "url": "" } },
-    "colorName": { "type": "string", "default": "blue" }
-  },
+	"keyword": [ "button", "generic" ],
+	"category": "design",
+	"attributes": {
+		"text": { "type": "string" },
+		"align": { "type": "string", "default": "full" },
+		"size": { "type": "string", "default": "large" },
+		"linkObject": { "type": "object", "default": { "url": "" } },
+		"colorName": { "type": "string", "default": "blue" }
+	},
 	"editorScript": "file:./index.js"
 }

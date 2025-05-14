@@ -4,17 +4,21 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build": "wp-scripts build",
 		"start": "wp-scripts start src/index.js",
 		"blocks": "wp-scripts start --experimental-modules",
-		"dev": "wp-scripts start",
+		"build": "run-s buildIndex buildBlocks",
+		"buildIndex": "wp-scripts build src/index.js",
+		"buildBlocks": "wp-scripts build --experimental-modules",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": [
+		"first time",
+		"noob"
+	],
+	"author": "Tyler Anderson",
 	"license": "ISC",
 	"dependencies": {
 		"@glidejs/glide": "^3.7.1",
@@ -27,6 +31,7 @@
 		"axios": "^1.7.9",
 		"font-awesome": "4.7.0",
 		"normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0"
 	},

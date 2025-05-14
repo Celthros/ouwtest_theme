@@ -3,13 +3,9 @@
 	"apiVersion": 3,
 	"name": "ourblocktheme/genericheading",
 	"title": "Generic Heading",
-  "keyword": [
-    "heading",
-    "header",
-    "text"
-  ],
-  "category": "text",
-  "attributes": {
+	"keyword": [ "heading", "header", "text" ],
+	"category": "text",
+	"attributes": {
 		"text": { "type": "string" },
 		"size": { "type": "string", "default": "large" }
 	},
