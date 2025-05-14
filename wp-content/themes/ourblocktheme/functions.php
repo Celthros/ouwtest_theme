@@ -199,7 +199,10 @@ function our_new_blocks(): void {
 	wp_localize_script( 'wp-editor', 'ourThemeData', array( 'themePath' =>  get_stylesheet_directory_uri() ) );
 
 	$ourBlocks = [
+		"genericheading",
+		"genericbutton",
 		"slide",
+		"slideshow",
 		"page",
 		"blogindex",
 		"programarchive",
@@ -228,58 +231,6 @@ function our_new_blocks(): void {
 }
 
 add_action( 'init', 'our_new_blocks' );
-
-/**
- * @property string $name
- * @property mixed $renderCallback
- * @property mixed $data
- */
-class JSXBlock {
-
-	public string $name;
-	public mixed $renderCallback;
-	public mixed $data;
-
-	function __construct( $name, $renderCallback = null, $data = null ) {
-		$this->name           = $name;
-		$this->renderCallback = $renderCallback;
-		$this->data           = $data;
-		add_action( 'init', array( $this, 'onInit' ) );
-	}
-
-	function ourRenderCallback( $attributes, $content ): false|string {
-		ob_start();
-		require get_theme_file_path( "blocks/{$this->name}/{$this->name}.php" );
-
-		return ob_get_clean();
-	}
-
-	public function onInit(): void {
-		wp_register_script( $this->name, get_stylesheet_directory_uri() . "/build/{$this->name}.js", array(
-			'wp-blocks',
-			'wp-editor',
-		) );
-
-		if ( $this->data ) {
-			wp_localize_script( $this->name, $this->name, $this->data );
-		}
-
-		$ourArgs = array(
-			'editor_script' => $this->name,
-		);
-
-		if ( $this->renderCallback ) {
-			$ourArgs['render_callback'] = [ $this, 'ourRenderCallback' ];
-		}
-
-		register_block_type( "ourblocktheme/{$this->name}", $ourArgs );
-	}
-
-}
-
-new JSXBlock( 'genericheading' );
-new JSXBlock( 'genericbutton' );
-new JSXBlock( 'slideshow', true );
 
 function myallowedBlocks( $allowed_block_types, $editor_context ) {
 
