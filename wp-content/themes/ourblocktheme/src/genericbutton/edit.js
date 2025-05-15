@@ -1,19 +1,19 @@
 import {
-	useBlockProps,
-	RichText,
-	BlockControls,
-	InspectorControls,
-	__experimentalLinkControl as LinkControl,
-	getColorObjectByColorValue,
+	useBlockProps ,
+	RichText ,
+	BlockControls ,
+	InspectorControls ,
+	__experimentalLinkControl as LinkControl ,
+	getColorObjectByColorValue ,
 } from '@wordpress/block-editor';
 import {
-	ToolbarGroup,
-	ToolbarButton,
-	Popover,
-	Button,
-	PanelBody,
-	PanelRow,
-	ColorPalette,
+	ToolbarGroup ,
+	ToolbarButton ,
+	Popover ,
+	Button ,
+	PanelBody ,
+	PanelRow ,
+	ColorPalette ,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import metadata from './block.json';
@@ -22,44 +22,44 @@ import { useState } from '@wordpress/element';
 import ourColors from '../../inc/ourColors';
 import { link } from '@wordpress/icons';
 
-export default function Edit( props ) {
-	const blockProps = useBlockProps();
+export default function Edit ( props ) {
+	const blockProps = useBlockProps ();
 	const title = metadata.title;
-	const [ isLinkPickerVisible, setIsLinkPickerVisible ] = useState( false );
+	const [ isLinkPickerVisible , setIsLinkPickerVisible ] = useState ( false );
 
-	function handleTextChange( x ) {
-		props.setAttributes( { text: x } );
+	function handleTextChange ( x ) {
+		props.setAttributes ( { text : x } );
 	}
 
-	function buttonHandler() {
-		setIsLinkPickerVisible( ( prev ) => ! prev );
+	function buttonHandler () {
+		setIsLinkPickerVisible ( ( prev ) => ! prev );
 	}
 
-	function handleLinkChange( newLink ) {
-		props.setAttributes( { linkObject: newLink } );
+	function handleLinkChange ( newLink ) {
+		props.setAttributes ( { linkObject : newLink } );
 	}
 
-	const currentColorValue = ourColors.filter( ( color ) => {
+	const currentColorValue = ourColors.filter ( ( color ) => {
 		return color.name === props.attributes.colorName;
 	} )[ 0 ].color;
 
-	function handleColorChange( newColor ) {
+	function handleColorChange ( newColor ) {
 		//from the hex value that the color palette gives us, we need to find its color name
-		const { name } = getColorObjectByColorValue( ourColors, newColor );
-		props.setAttributes( { colorName: name } );
+		const { name } = getColorObjectByColorValue ( ourColors , newColor );
+		props.setAttributes ( { colorName : name } );
 	}
 
 	return (
 		<div { ...blockProps }>
 			<BlockControls>
 				<ToolbarGroup>
-					<ToolbarButton onClick={ buttonHandler } icon={ link } />
+					<ToolbarButton onClick={ buttonHandler } icon={ link }/>
 				</ToolbarGroup>
 				<ToolbarGroup>
 					<ToolbarButton
 						isPressed={ props.attributes.size === 'large' }
 						onClick={ () =>
-							props.setAttributes( { size: 'large' } )
+							props.setAttributes ( { size : 'large' } )
 						}
 					>
 						Large
@@ -67,7 +67,7 @@ export default function Edit( props ) {
 					<ToolbarButton
 						isPressed={ props.attributes.size === 'medium' }
 						onClick={ () =>
-							props.setAttributes( { size: 'medium' } )
+							props.setAttributes ( { size : 'medium' } )
 						}
 					>
 						Medium
@@ -75,7 +75,7 @@ export default function Edit( props ) {
 					<ToolbarButton
 						isPressed={ props.attributes.size === 'small' }
 						onClick={ () =>
-							props.setAttributes( { size: 'small' } )
+							props.setAttributes ( { size : 'small' } )
 						}
 					>
 						Small
@@ -105,7 +105,7 @@ export default function Edit( props ) {
 			{ isLinkPickerVisible && (
 				<Popover
 					position="middle center"
-					onFocusOutside={ () => setIsLinkPickerVisible( false ) }
+					onFocusOutside={ () => setIsLinkPickerVisible ( false ) }
 				>
 					<LinkControl
 						settings={ [] }
@@ -114,8 +114,8 @@ export default function Edit( props ) {
 					/>
 					<Button
 						variant="primary"
-						onClick={ () => setIsLinkPickerVisible( false ) }
-						style={ { display: 'block', width: '100%' } }
+						onClick={ () => setIsLinkPickerVisible ( false ) }
+						style={ { display : 'block' , width : '100%' } }
 					>
 						Confirm Link
 					</Button>

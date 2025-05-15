@@ -2,7 +2,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import metadata from './block.json';
 import Edit from './edit';
 
-function Save( props ) {
+function Save ( props ) {
 	return (
 		<a
 			href={ props.attributes.linkObject.url }
@@ -13,7 +13,7 @@ function Save( props ) {
 	);
 }
 
-registerBlockType( metadata.name, {
-	edit: Edit,
-	save: Save,
+registerBlockType ( metadata.name , {
+	edit : Edit ,
+	save : Save ,
 } );
