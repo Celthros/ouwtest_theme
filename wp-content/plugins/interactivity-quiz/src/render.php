@@ -54,3 +54,12 @@ wp_interactivity_state(
 		?>
 	</p>
 </div>
+
+<div
+	<?php echo get_block_wrapper_attributes(); ?>
+    data-wp-interactive="create-block"
+    data-wp-context='{ "clickCount": 0 }'
+>
+    <p>The button below has been clicked <span data-wp-text="context.clickCount"></span> times.</p>
+    <button data-wp-on--click="actions.buttonHandler">Click me!</button>
+</div>

@@ -71,9 +71,22 @@ const {
     }
   },
   actions: {
+    buttonHandler: () => {
+      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+      if (context && typeof context.clickCount === 'number') {
+        context.clickCount++;
+        console.log('Button was clicked!');
+      } else {
+        console.error('Invalid context or clickCount is not a number.');
+      }
+    },
     toggleOpen() {
       const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
-      context.isOpen = !context.isOpen;
+      if (context) {
+        context.isOpen = !context.isOpen;
+      } else {
+        console.error('Context is undefined.');
+      }
     },
     toggleTheme() {
       state.isDark = !state.isDark;
@@ -81,11 +94,12 @@ const {
   },
   callbacks: {
     logIsOpen: () => {
-      const {
-        isOpen
-      } = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
-      // Log the value of `isOpen` each time it changes.
-      console.log(`Is open: ${isOpen}`);
+      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+      if (context) {
+        console.log(`Is open: ${context.isOpen}`);
+      } else {
+        console.error('Context is undefined.');
+      }
     }
   }
 });
