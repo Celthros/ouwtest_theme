@@ -10,7 +10,7 @@ import {
 	ColorPicker
 } from "@wordpress/components"
 import { InspectorControls , BlockControls , AlignmentToolbar , useBlockProps } from "@wordpress/block-editor";
-import { wordpress , starFilled , starEmpty } from '@wordpress/icons';
+import { starFilled , starEmpty } from '@wordpress/icons';
 
 /**
  * Retrieves the translation of text.
