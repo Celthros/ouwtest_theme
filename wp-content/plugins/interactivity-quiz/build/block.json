@@ -5,8 +5,31 @@
   "version": "0.1.0",
   "title": "Interactivity Quiz",
   "category": "widgets",
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answers": {
+      "type": "array",
+      "default": [
+        ""
+      ]
+    },
+    "correctAnswer": {
+      "type": "number",
+      "default": ""
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#EBEBEB"
+    },
+    "theAlignment": {
+      "type": "string",
+      "default": "left"
+    }
+  },
   "icon": "media-interactive",
-  "description": "An interactive block with the Interactivity API.",
+  "description": "An interactive block with the Interactivity API",
   "example": {},
   "supports": {
     "interactivity": true
