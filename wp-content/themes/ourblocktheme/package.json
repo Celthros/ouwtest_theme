@@ -22,6 +22,7 @@
 	"author": "Tyler Anderson",
 	"license": "ISC",
 	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.7.2",
 		"@glidejs/glide": "^3.7.1",
 		"@playwright/test": "^1.0.0",
 		"@wordpress/element": "^6.23.0",
@@ -30,8 +31,8 @@
 		"font-awesome": "4.7.0",
 		"normalize.css": "^8.0.1",
 		"npm-run-all": "^4.1.5",
-		"react": "^18.0.0",
-		"react-dom": "^18.0.0"
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
 	},
 	"devDependencies": {
 		"@wordpress/block-editor": "^14.18.0",

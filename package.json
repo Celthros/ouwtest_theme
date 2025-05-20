@@ -14,13 +14,13 @@
     "packages-update": "wp-scripts packages-update"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@glidejs/glide": "^3.7.1",
     "@playwright/test": "^1.0.0",
     "@wordpress/element": "^6.23.0",
     "@wordpress/i18n": "^5.23.0",
     "@wordpress/icons": "^10.23.0",
     "axios": "^1.7.9",
-    "font-awesome": "4.7.0",
     "normalize.css": "^8.0.1",
     "npm-run-all": "^4.1.5",
     "react": "18.2.0",
