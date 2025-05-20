@@ -14,7 +14,7 @@
  */
 
 // Need to store this variable before leaving this file.
-define( '__FP_FILE__', __FILE__ );
+const __FP_FILE__ = __FILE__;
 
 /**
  * Version compares to PHP 7.4, so we can use namespaces, anonymous functions
