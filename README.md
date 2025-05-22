@@ -13,7 +13,39 @@
 
 ## Overview
 
-Brief description of the project and its purpose.
+The OurBlock Theme is a custom WordPress theme designed to provide a dynamic and feature-rich experience for managing and displaying content. It integrates custom post types, advanced custom fields, and block-based layouts to create a flexible and modern website.
+
+**Key Features**
+Custom Post Types:
+Includes Campus, Event, Program, and Professor post types, each tailored for specific content needs with custom labels, archives, and REST API support.
+
+
+Custom Blocks:
+A variety of custom Gutenberg blocks are registered, such as header, footer, eventsandblogs, and more, enabling modular and reusable content creation.
+
+
+Event Management:
+Features an Event post type with custom queries for upcoming and past events, ensuring easy navigation and organization.
+
+
+User Role Customization:
+Redirects subscribers to the homepage and hides the admin bar for a streamlined user experience.
+
+
+Custom Login Screen:
+Styled login page with custom branding, fonts, and links.
+
+
+Private Notes:
+Implements a Note post type with restrictions to ensure privacy and limit the number of notes per user.
+
+
+Google Maps Integration:
+Supports Google Maps API for enhanced location-based features.
+
+
+Modern Development Stack:
+Built with PHP, JavaScript, React, Composer, and npm for a robust and scalable development workflow.
 
 ## Monorepo Structure
 
@@ -68,6 +100,27 @@ ourblocktheme scripts (wp-content/themes/ourblocktheme/package.json)
 - `yarn workspace outblocktheme lint:css` — Lint theme CSS
 - `yarn workspace outblocktheme lint:js` — Lint theme JS
 - `yarn workspace outblocktheme packages-update` — Update theme packages
+
+### Custom Post types 
+
+Campus:
+Title: Campuses
+Description: Represents different campus locations with details like title, editor content, excerpt, thumbnail, and page attributes.
+
+
+Event:
+Title: Events
+Description: Represents events with details like title, editor content, excerpt, thumbnail, and page attributes. Includes an archive for listing all events.
+
+
+Program:
+Title: Programs
+Description: Represents academic programs with details like title, editor content, thumbnail, and page attributes. Includes an archive for listing all programs.
+
+
+Professor:
+Title: Professors
+Description: Represents professors with details like title, editor content, thumbnail, and page attributes. Does not include an archive.
 
 ### Troubleshooting
 
