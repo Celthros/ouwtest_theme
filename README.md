@@ -22,13 +22,13 @@ Brief description of the project and its purpose.
 
 ## Requirements
 
+- Yarn (v4.9.1)
 - Node.js (23.8.0 or higher)
 - NPM (10.9.2 or higher)
 - NVM (version 23.8.0 or higher)
 - Dart SASS (version 1.89.0 or higher) - Node-SASS is now deprecated
-- Yarn (v4.9.1)
 - PHP (for WordPress) Version 8.2 or higher
-- WordPress installation
+- WordPress installation - via WP Local
 
 ## Installation
 
