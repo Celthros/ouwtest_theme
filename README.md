@@ -22,7 +22,8 @@ Brief description of the project and its purpose.
 
 ## Requirements
 
-- Node.js (version 23.8.0 or higher)
+- Node.js (10.9.2 or higher)
+- NVM (version 23.8.0 or higher)
 - Yarn (v4.9.1)
 - PHP (for WordPress)
 - WordPress installation
@@ -31,7 +32,7 @@ Brief description of the project and its purpose.
 
 ### 1. Clone the repository
 
-```sh
+```
 git clone <repository-url>
 cd <project-root>
 ````
