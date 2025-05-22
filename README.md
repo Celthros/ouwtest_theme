@@ -15,9 +15,11 @@
 
 The OurBlock Theme is a custom WordPress theme designed to provide a dynamic and feature-rich experience for managing and displaying content. It integrates custom post types, advanced custom fields, and block-based layouts to create a flexible and modern website.
 
-**Key Features**
-- Custom Post Types:
--- Includes Campus, Event, Program, and Professor post types, each tailored for specific content needs with custom labels, archives, and REST API support.
+#### **Key Features**
+
+Custom Post Types:
+Includes Campus, Event, Program, and Professor post types, each tailored for specific content needs with custom labels, archives, and REST API support. 
+
 
 
 Custom Blocks:
