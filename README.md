@@ -22,7 +22,8 @@ Brief description of the project and its purpose.
 
 ## Requirements
 
-- Node.js (10.9.2 or higher)
+- Node.js (23.8.0 or higher)
+- NPM (10.9.2 or higher)
 - NVM (version 23.8.0 or higher)
 - Yarn (v4.9.1)
 - PHP (for WordPress)
