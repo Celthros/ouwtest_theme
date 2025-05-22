@@ -26,7 +26,7 @@ Brief description of the project and its purpose.
 - NPM (10.9.2 or higher)
 - NVM (version 23.8.0 or higher)
 - Yarn (v4.9.1)
-- PHP (for WordPress)
+- PHP (for WordPress) Version 8.2 or higher
 - WordPress installation
 
 ## Installation
