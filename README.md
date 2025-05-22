@@ -36,6 +36,9 @@ git clone <repository-url>
 cd <project-root>
 ````
 
+- Create a file names `.yarnrc.yml` in the root of the project with the following content:
+  `nodeLinker: node-modules`
+
 ### 2. Install dependencies
 
 ````
