@@ -1,8 +1,10 @@
 <?php
 
-//require_once get_theme_file_path( 'autoload.php' );
+
 
 //namespace Ourblocktheme;
+
+//require_once get_theme_file_path( 'autoload.php' );
 
 //use Ourblocktheme\Autoload;
 
