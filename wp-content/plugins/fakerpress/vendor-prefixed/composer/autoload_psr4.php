@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'FakerPress\\ThirdParty\\lucatume\\DI52\\' => array($vendorDir . '/lucatume/di52/src'),
     'FakerPress\\ThirdParty\\Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
+    'FakerPress\\ThirdParty\\Psr\\Clock\\' => array($vendorDir . '/psr/clock/src'),
     'FakerPress\\ThirdParty\\Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
     'FakerPress\\ThirdParty\\Cake\\Chronos\\' => array($vendorDir . '/cakephp/chronos/src'),
     'FakerPress\\Dev\\' => array($baseDir . '/dev/src'),

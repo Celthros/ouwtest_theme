@@ -13,6 +13,8 @@ declare(strict_types=1);
  */
 namespace FakerPress\ThirdParty\Cake\Chronos;
 
+use DateTimeInterface;
+
 /**
  * Interface for formatting differences in text.
  */
@@ -21,15 +23,14 @@ interface DifferenceFormatterInterface
     /**
      * Get the difference in a human readable format.
      *
-     * @param \FakerPress\ThirdParty\Cake\Chronos\ChronosInterface $date The datetime to start with.
-     * @param \FakerPress\ThirdParty\Cake\Chronos\ChronosInterface|null $other The datetime to compare against.
-     * @param bool $absolute Removes time difference modifiers ago, after, etc.
-     * @return string The difference between the two days in a human readable format.
-     * @see \FakerPress\ThirdParty\Cake\Chronos\ChronosInterface::diffForHumans
+     * @param \FakerPress\ThirdParty\Cake\Chronos\ChronosDate|\DateTimeInterface $first The datetime to start with.
+     * @param \FakerPress\ThirdParty\Cake\Chronos\ChronosDate|\DateTimeInterface|null $second The datetime to compare against.
+     * @param bool $absolute removes time difference modifiers ago, after, etc
+     * @return string The difference between the two days in a human readable format
      */
     public function diffForHumans(
-        ChronosInterface $date,
-        ?ChronosInterface $other = null,
+        ChronosDate|DateTimeInterface $first,
+        ChronosDate|DateTimeInterface|null $second = null,
         bool $absolute = false
     ): string;
 }

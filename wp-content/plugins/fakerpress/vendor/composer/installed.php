@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'bordoni/fakerpress',
-        'pretty_version' => '0.7.2',
-        'version' => '0.7.2.0',
-        'reference' => 'b4a61a492a19b879b8a7e3c70ea1ff51b990f58b',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'c240003f80bdfbdc72134c81c02d108978dae386',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,18 +11,18 @@
     ),
     'versions' => array(
         'bordoni/fakerpress' => array(
-            'pretty_version' => '0.7.2',
-            'version' => '0.7.2.0',
-            'reference' => 'b4a61a492a19b879b8a7e3c70ea1ff51b990f58b',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'c240003f80bdfbdc72134c81c02d108978dae386',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'cakephp/chronos' => array(
-            'pretty_version' => '2.4.5',
-            'version' => '2.4.5.0',
-            'reference' => 'b0321ab7658af9e7abcb3dd876f226e6f3dbb81f',
+            'pretty_version' => '3.1.0',
+            'version' => '3.1.0.0',
+            'reference' => '786d69e1ee4b735765cbdb5521b9603e9b98d650',
             'type' => 'library',
             'install_path' => __DIR__ . '/../cakephp/chronos',
             'aliases' => array(),
@@ -46,6 +46,21 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'psr/clock' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'reference' => 'e41a24703d4560fd0acb709162f73b8adfc3aa0d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/clock',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/clock-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
         'psr/container' => array(
             'pretty_version' => '1.1.2',
             'version' => '1.1.2.0',
@@ -56,9 +71,9 @@
             'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(
-            'pretty_version' => 'v2.5.4',
-            'version' => '2.5.4.0',
-            'reference' => '605389f2a7e5625f273b53960dc46aeaf9c62918',
+            'pretty_version' => 'v3.5.1',
+            'version' => '3.5.1.0',
+            'reference' => '74c71c939a79f7d5bf3c1ce9f5ea37ba0114c6f6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => array(),

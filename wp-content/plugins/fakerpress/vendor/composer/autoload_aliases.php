@@ -1608,67 +1608,24 @@ function autoloadAliases( $classname ): void {
       $includeFile = '<?php namespace Cake\Chronos; interface DifferenceFormatterInterface extends \FakerPress\ThirdParty\Cake\Chronos\DifferenceFormatterInterface {};';
       include "data://text/plain;base64," . base64_encode($includeFile);
       break;
-    case 'Cake\\Chronos\\MutableDate':
-      class_alias(\FakerPress\ThirdParty\Cake\Chronos\MutableDate::class, \Cake\Chronos\MutableDate::class);
-      break;
-    case 'Cake\\Chronos\\ChronosInterval':
-      class_alias(\FakerPress\ThirdParty\Cake\Chronos\ChronosInterval::class, \Cake\Chronos\ChronosInterval::class);
-      break;
-    case 'Cake\\Chronos\\MutableDateTime':
-      class_alias(\FakerPress\ThirdParty\Cake\Chronos\MutableDateTime::class, \Cake\Chronos\MutableDateTime::class);
+    case 'Cake\\Chronos\\ClockFactory':
+      class_alias(\FakerPress\ThirdParty\Cake\Chronos\ClockFactory::class, \Cake\Chronos\ClockFactory::class);
       break;
     case 'Cake\\Chronos\\Chronos':
       class_alias(\FakerPress\ThirdParty\Cake\Chronos\Chronos::class, \Cake\Chronos\Chronos::class);
       break;
-    case 'Cake\\Chronos\\ChronosInterface':
-      $includeFile = '<?php namespace Cake\Chronos; interface ChronosInterface extends \FakerPress\ThirdParty\Cake\Chronos\ChronosInterface {};';
-      include "data://text/plain;base64," . base64_encode($includeFile);
+    case 'Cake\\Chronos\\ChronosTime':
+      class_alias(\FakerPress\ThirdParty\Cake\Chronos\ChronosTime::class, \Cake\Chronos\ChronosTime::class);
       break;
     case 'Cake\\Chronos\\Translator':
       class_alias(\FakerPress\ThirdParty\Cake\Chronos\Translator::class, \Cake\Chronos\Translator::class);
       break;
-    case 'Cake\\Chronos\\Traits\\MagicPropertyTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait MagicPropertyTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\MagicPropertyTrait };';
+    case 'Cake\\Chronos\\FormattingTrait':
+      $includeFile = '<?php namespace Cake\Chronos; trait FormattingTrait { use \FakerPress\ThirdParty\Cake\Chronos\FormattingTrait };';
       include "data://text/plain;base64," . base64_encode($includeFile);
       break;
-    case 'Cake\\Chronos\\Traits\\ModifierTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait ModifierTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\ModifierTrait };';
-      include "data://text/plain;base64," . base64_encode($includeFile);
-      break;
-    case 'Cake\\Chronos\\Traits\\FrozenTimeTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait FrozenTimeTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\FrozenTimeTrait };';
-      include "data://text/plain;base64," . base64_encode($includeFile);
-      break;
-    case 'Cake\\Chronos\\Traits\\RelativeKeywordTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait RelativeKeywordTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\RelativeKeywordTrait };';
-      include "data://text/plain;base64," . base64_encode($includeFile);
-      break;
-    case 'Cake\\Chronos\\Traits\\FactoryTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait FactoryTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\FactoryTrait };';
-      include "data://text/plain;base64," . base64_encode($includeFile);
-      break;
-    case 'Cake\\Chronos\\Traits\\TestingAidTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait TestingAidTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\TestingAidTrait };';
-      include "data://text/plain;base64," . base64_encode($includeFile);
-      break;
-    case 'Cake\\Chronos\\Traits\\CopyTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait CopyTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\CopyTrait };';
-      include "data://text/plain;base64," . base64_encode($includeFile);
-      break;
-    case 'Cake\\Chronos\\Traits\\DifferenceTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait DifferenceTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\DifferenceTrait };';
-      include "data://text/plain;base64," . base64_encode($includeFile);
-      break;
-    case 'Cake\\Chronos\\Traits\\ComparisonTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait ComparisonTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\ComparisonTrait };';
-      include "data://text/plain;base64," . base64_encode($includeFile);
-      break;
-    case 'Cake\\Chronos\\Traits\\TimezoneTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait TimezoneTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\TimezoneTrait };';
-      include "data://text/plain;base64," . base64_encode($includeFile);
-      break;
-    case 'Cake\\Chronos\\Traits\\FormattingTrait':
-      $includeFile = '<?php namespace Cake\Chronos\Traits; trait FormattingTrait { use \FakerPress\ThirdParty\Cake\Chronos\Traits\FormattingTrait };';
+    case 'Psr\\Clock\\ClockInterface':
+      $includeFile = '<?php namespace Psr\Clock; interface ClockInterface extends \FakerPress\ThirdParty\Psr\Clock\ClockInterface {};';
       include "data://text/plain;base64," . base64_encode($includeFile);
       break;
     default:

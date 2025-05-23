@@ -4,11 +4,10 @@
 
 namespace FakerPress\ThirdParty\Composer\Autoload;
 
-class ComposerStaticInitd4e0679c57019ad4f73ecb3ba581bb5c
+class ComposerStaticInit5dc28f99f9a111df9987bee394b31be9
 {
     public static $files = array (
         '009ddd489b3d26de464d8a67be8b5b8d' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        'f206c1ad269197be98211b6d5caa3df2' => __DIR__ . '/..' . '/cakephp/chronos/src/carbon_compat.php',
         'acf157317f3f02fa89a9c2026d9a35a7' => __DIR__ . '/../..' . '/src/functions/container.php',
         'a1025652e8fd8237c706c17e8b59b740' => __DIR__ . '/../..' . '/src/functions/date.php',
         'c42c381a41705a09388565313c8cd521' => __DIR__ . '/../..' . '/src/functions/variables.php',
@@ -22,6 +21,7 @@ class ComposerStaticInitd4e0679c57019ad4f73ecb3ba581bb5c
         array (
             'FakerPress\\ThirdParty\\lucatume\\DI52\\' => 36,
             'FakerPress\\ThirdParty\\Psr\\Container\\' => 36,
+            'FakerPress\\ThirdParty\\Psr\\Clock\\' => 32,
             'FakerPress\\ThirdParty\\Faker\\' => 28,
             'FakerPress\\ThirdParty\\Cake\\Chronos\\' => 35,
             'FakerPress\\Dev\\' => 15,
@@ -37,6 +37,10 @@ class ComposerStaticInitd4e0679c57019ad4f73ecb3ba581bb5c
         'FakerPress\\ThirdParty\\Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'FakerPress\\ThirdParty\\Psr\\Clock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
         'FakerPress\\ThirdParty\\Faker\\' => 
         array (
@@ -111,23 +115,11 @@ class ComposerStaticInitd4e0679c57019ad4f73ecb3ba581bb5c
         'FakerPress\\Template' => __DIR__ . '/../..' . '/src/FakerPress/Template.php',
         'FakerPress\\ThirdParty\\Cake\\Chronos\\Chronos' => __DIR__ . '/..' . '/cakephp/chronos/src/Chronos.php',
         'FakerPress\\ThirdParty\\Cake\\Chronos\\ChronosDate' => __DIR__ . '/..' . '/cakephp/chronos/src/ChronosDate.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\ChronosInterface' => __DIR__ . '/..' . '/cakephp/chronos/src/ChronosInterface.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\ChronosInterval' => __DIR__ . '/..' . '/cakephp/chronos/src/ChronosInterval.php',
+        'FakerPress\\ThirdParty\\Cake\\Chronos\\ChronosTime' => __DIR__ . '/..' . '/cakephp/chronos/src/ChronosTime.php',
+        'FakerPress\\ThirdParty\\Cake\\Chronos\\ClockFactory' => __DIR__ . '/..' . '/cakephp/chronos/src/ClockFactory.php',
         'FakerPress\\ThirdParty\\Cake\\Chronos\\DifferenceFormatter' => __DIR__ . '/..' . '/cakephp/chronos/src/DifferenceFormatter.php',
         'FakerPress\\ThirdParty\\Cake\\Chronos\\DifferenceFormatterInterface' => __DIR__ . '/..' . '/cakephp/chronos/src/DifferenceFormatterInterface.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\MutableDate' => __DIR__ . '/..' . '/cakephp/chronos/src/MutableDate.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\MutableDateTime' => __DIR__ . '/..' . '/cakephp/chronos/src/MutableDateTime.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\ComparisonTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/ComparisonTrait.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\CopyTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/CopyTrait.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\DifferenceTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/DifferenceTrait.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\FactoryTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/FactoryTrait.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\FormattingTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/FormattingTrait.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\FrozenTimeTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/FrozenTimeTrait.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\MagicPropertyTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/MagicPropertyTrait.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\ModifierTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/ModifierTrait.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\RelativeKeywordTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/RelativeKeywordTrait.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\TestingAidTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/TestingAidTrait.php',
-        'FakerPress\\ThirdParty\\Cake\\Chronos\\Traits\\TimezoneTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/Traits/TimezoneTrait.php',
+        'FakerPress\\ThirdParty\\Cake\\Chronos\\FormattingTrait' => __DIR__ . '/..' . '/cakephp/chronos/src/FormattingTrait.php',
         'FakerPress\\ThirdParty\\Cake\\Chronos\\Translator' => __DIR__ . '/..' . '/cakephp/chronos/src/Translator.php',
         'FakerPress\\ThirdParty\\Faker\\Calculator\\Ean' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Ean.php',
         'FakerPress\\ThirdParty\\Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Iban.php',
@@ -635,6 +627,7 @@ class ComposerStaticInitd4e0679c57019ad4f73ecb3ba581bb5c
         'FakerPress\\ThirdParty\\Faker\\Provider\\zh_TW\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/zh_TW/Text.php',
         'FakerPress\\ThirdParty\\Faker\\UniqueGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/UniqueGenerator.php',
         'FakerPress\\ThirdParty\\Faker\\ValidGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/ValidGenerator.php',
+        'FakerPress\\ThirdParty\\Psr\\Clock\\ClockInterface' => __DIR__ . '/..' . '/psr/clock/src/ClockInterface.php',
         'FakerPress\\ThirdParty\\Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
         'FakerPress\\ThirdParty\\Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
         'FakerPress\\ThirdParty\\Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',
@@ -660,9 +653,9 @@ class ComposerStaticInitd4e0679c57019ad4f73ecb3ba581bb5c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd4e0679c57019ad4f73ecb3ba581bb5c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd4e0679c57019ad4f73ecb3ba581bb5c::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd4e0679c57019ad4f73ecb3ba581bb5c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5dc28f99f9a111df9987bee394b31be9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5dc28f99f9a111df9987bee394b31be9::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit5dc28f99f9a111df9987bee394b31be9::$classMap;
 
         }, null, ClassLoader::class);
     }
