@@ -4,7 +4,7 @@ namespace Ourblocktheme\controllers;
 
 class ThemeEnqueue {
 
-	private static string $googleMapApiKey = "YOUR_GOOGLE_MAP_API_KEY"; // Replace with a secure source
+	private static string $googleMapApiKey = "AIzaSyBRRnSwouBfAyhQ47rfDX0NMPcqiQ1Qm4s"; // Replace with a secure source
 
 	public function __construct() {
 		self::load_dependencies();
