@@ -1,84 +1,82 @@
 {
-  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/wp/6.8/schemas/json/theme.json",
-  "version": 3,
-  "styles": {
-    "blocks": {
-      "core/button": {
-        "color": {
-          "text": "#fff",
-          "background": "var(--wp--preset--color--primary)"
-        }
-      }
-    }
-  },
-  "settings": {
-    "typography": {
-      "fontFamilies": [],
-      "fontStyle": true,
-      "fontWeight": true,
-      "letterSpacing": true,
-      "textDecoration": true,
-      "lineHeight": true,
-      "textTransform": true,
-      "dropCap": false,
-      "customFontSize": true,
-      "fontSizes": []
-    },
-    "blocks": {
-      "core/button": {
-        "border": {
-          "color": true,
-          "radius": true,
-          "style": true,
-          "width": false
-        }
-      }
-    },
-    "color": {
-      "background": true,
-      "text": true,
-      "link": true,
-      "custom": true,
-      "defaultPalette": true,
-      "duotone": [],
-      "customDuotone": true,
-      "gradients": [],
-      "customGradient": true,
-      "palette": [
-        {
-          "slug": "primary",
-          "color": "#0d3b66",
-          "name": "Primary"
-        },
-        {
-          "slug": "secondary",
-          "color": "#ee964b",
-          "name": "Secondary"
-        },
-        {
-          "slug": "background",
-          "color": "#FFFFFF",
-          "name": "Background"
-        },
-        {
-          "slug": "foreground",
-          "color": "#333333",
-          "name": "Foreground"
-        }
-      ]
-    },
-    "layout": {
-      "contentSize": "840px",
-      "wideSize": "1200px"
-    }
-  },
-  "customTemplates": [
-    {
-      "name": "emptycanvas",
-      "postTypes": [
-        "page"
-      ],
-      "title": "Empty Canvas"
-    }
-  ]
+	"$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/wp/6.8/schemas/json/theme.json",
+	"version": 3,
+	"styles": {
+		"blocks": {
+			"core/button": {
+				"color": {
+					"text": "#fff",
+					"background": "var(--wp--preset--color--primary)"
+				}
+			}
+		}
+	},
+	"settings": {
+		"typography": {
+			"fontFamilies": [],
+			"fontStyle": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"textDecoration": true,
+			"lineHeight": true,
+			"textTransform": true,
+			"dropCap": false,
+			"customFontSize": true,
+			"fontSizes": []
+		},
+		"blocks": {
+			"core/button": {
+				"border": {
+					"color": true,
+					"radius": true,
+					"style": true,
+					"width": false
+				}
+			}
+		},
+		"color": {
+			"background": true,
+			"text": true,
+			"link": true,
+			"custom": true,
+			"defaultPalette": true,
+			"duotone": [],
+			"customDuotone": true,
+			"gradients": [],
+			"customGradient": true,
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#0d3b66",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#ee964b",
+					"name": "Secondary"
+				},
+				{
+					"slug": "background",
+					"color": "#FFFFFF",
+					"name": "Background"
+				},
+				{
+					"slug": "foreground",
+					"color": "#333333",
+					"name": "Foreground"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "840px",
+			"wideSize": "1200px"
+		}
+	},
+	"customTemplates": [
+		{
+			"name": "emptycanvas",
+			"postTypes": [ "page" ],
+			"title": "Empty Canvas"
+		}
+	]
 }
