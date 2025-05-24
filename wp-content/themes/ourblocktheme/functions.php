@@ -54,7 +54,6 @@ function pageBanner( $args = null ): void {
 	</div>
 <?php }
 
-
 /*
 function university_files(): void {
 	wp_enqueue_script( 'googleMap', '//maps.googleapis.com/maps/api/js?key=' . GOOGLE_MAP_API_KEY . '&v=weekly&libraries=marker', null, '1.0', true );
