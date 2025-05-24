@@ -77,6 +77,23 @@
 			"name": "emptycanvas",
 			"postTypes": [ "page" ],
 			"title": "Empty Canvas"
+		},
+		{
+			"name": "single-campus",
+			"postTypes": [ "campus" ],
+			"title": "Single Campus"
+		}
+	],
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
 		}
 	]
 }
