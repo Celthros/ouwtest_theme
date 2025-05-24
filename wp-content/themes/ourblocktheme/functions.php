@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * Version 1 of classname conversion
+ *
+ */
+
 require_once get_theme_file_path( 'autoload.php' );
 
 /*const GOOGLE_MAP_API_KEY = 'AIzaSyBRRnSwouBfAyhQ47rfDX0NMPcqiQ1Qm4s';
