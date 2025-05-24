@@ -17,6 +17,31 @@ class Theme {
 		add_action( 'init', [ self::class, 'addThemeSupport' ] );
 	}
 
+    /*
+     * Add Theme Support
+     *
+     * @return void
+     *
+     * Description:
+     *  - Title Tag
+     *  - Post Thumbnails
+     *  - Page Banner Image Size
+     *  - Editor Styles
+     *  - Editor Style
+     *
+     * can't use after_setup_theme because it's too early
+     * https://developer.wordpress.org/reference/hooks/after_setup_theme/
+     * will try to use init instead, for now
+     *
+     *  To do
+     *  - Add support for custom logo
+     *  - Add support for custom header
+     *  - Add support for custom background
+     *  - Add support for custom menu
+     *  Maybe return after_setup_theme support
+     *  - Add support for custom editor styles
+     *
+     */
 	public static function addThemeSupport(): void {
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
