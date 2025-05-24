@@ -20,14 +20,14 @@ function autoload( string $class ): void {
 	$relative_class = substr( $class, $len );
 	$file           = $base_directory . '\\' . str_replace( '\\', '\\', $relative_class ) . '.php';
 
-	error_log( "Attempting to load class: $class" );
-	error_log( "Expected file path: $file" );
+	//error_log( "Attempting to load class: $class" );
+	//error_log( "Expected file path: $file" );
 
 	if ( file_exists( $file ) ) {
 		require $file;
-		error_log( "Class $class successfully loaded." );
+		//error_log( "Class $class successfully loaded." );
 	} else {
-		error_log( "Class $class not found. File $file does not exist." );
+		//error_log( "Class $class not found. File $file does not exist." );
 	}
 }
 
@@ -42,7 +42,7 @@ function auto_instantiate_controllers(): void {
 			if ( class_exists( $class_name ) ) {
 				new $class_name();
 			} else {
-				error_log( "Class $class_name not found." );
+				//error_log( "Class $class_name not found." );
 			}
 		}
 	}
