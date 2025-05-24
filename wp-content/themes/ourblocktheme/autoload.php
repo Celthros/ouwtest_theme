@@ -3,66 +3,53 @@
 namespace Ourblocktheme;
 
 use function file_exists;
-use function is_dir;
-use function scandir;
 use function str_replace;
+use DirectoryIterator;
 
-class autoload {
+function autoload( string $class ): void {
+	$root_namespace = 'Ourblocktheme\\controllers';
+	$base_directory = __DIR__ . '\controllers';
 
-	protected static string $root_namespace = 'Ourblocktheme';
-	protected static string $base_directory = __DIR__;
+	$prefix = $root_namespace . '\\';
+	$len    = strlen( $prefix );
 
-	public static function init(): void {
-		spl_autoload_register( [ __CLASS__, 'autoload' ] );
+	if ( strncmp( $prefix, $class, $len ) !== 0 ) {
+		return;
 	}
 
-	public static function autoload( $class ): void {
-		$prefix = self::$root_namespace . '\\';
-		$len    = strlen( $prefix );
+	$relative_class = substr( $class, $len );
+	$file           = $base_directory . '\\' . str_replace( '\\', '\\', $relative_class ) . '.php';
 
-		// Ensure the class belongs to the root namespace
-		if ( strncmp( $prefix, $class, $len ) !== 0 ) {
-			return;
-		}
+	error_log( "Attempting to load class: $class" );
+	error_log( "Expected file path: $file" );
 
-		$relative_class = substr( $class, $len );
-		$file           = self::find_file( $relative_class );
-
-		if ( $file && file_exists( $file ) ) {
-			require $file;
-		} else {
-			error_log( "Autoload error: Class $class not found." );
-		}
-	}
-
-	private static function find_file( string $relative_class ): ?string {
-		$directories = self::get_all_directories( self::$base_directory );
-
-		foreach ( $directories as $directory ) {
-			$file = $directory . '/' . str_replace( '\\', '/', $relative_class ) . '.php';
-			if ( file_exists( $file ) ) {
-				return $file;
-			}
-		}
-
-		return null;
-	}
-
-	private static function get_all_directories( string $base_dir ): array {
-		$directories = [ $base_dir ];
-		$items       = scandir( $base_dir );
-
-		foreach ( $items as $item ) {
-			if ( $item === '.' || $item === '..' ) {
-				continue;
-			}
-
-			$path = $base_dir . '/' . $item;
-			if ( is_dir( $path ) ) {
-				$directories = array_merge( $directories, self::get_all_directories( $path ) );
-			}
-		}
-
-		return $directories;
+	if ( file_exists( $file ) ) {
+		require $file;
+		error_log( "Class $class successfully loaded." );
+	} else {
+		error_log( "Class $class not found. File $file does not exist." );
 	}
 }
+
+function auto_instantiate_controllers(): void {
+	$base_directory = __DIR__ . '/controllers';
+	$namespace      = 'Ourblocktheme\\controllers';
+
+	foreach ( new DirectoryIterator( $base_directory ) as $file ) {
+		if ( $file->isFile() && $file->getExtension() === 'php' ) {
+			$class_name = $namespace . '\\' . $file->getBasename( '.php' );
+
+			if ( class_exists( $class_name ) ) {
+				new $class_name();
+			} else {
+				error_log( "Class $class_name not found." );
+			}
+		}
+	}
+}
+
+// Register the autoloader
+spl_autoload_register( __NAMESPACE__ . '\\autoload' );
+
+// Run the auto-instantiation after autoload is registered
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\auto_instantiate_controllers' );

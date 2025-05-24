@@ -8,7 +8,7 @@ class ThemeEnqueue {
 
 	public function __construct() {
 		self::load_dependencies();
-		$this->register_hooks();
+		self::register_hooks();
 	}
 
 	private function register_hooks(): void {
@@ -50,6 +50,7 @@ class ThemeEnqueue {
 	}
 
 	public static function our_new_blocks(): void {
+
 		wp_localize_script( 'wp-editor', 'ourThemeData', [ 'themePath' => get_stylesheet_directory_uri() ] );
 
 		$ourBlocks = [
@@ -79,7 +80,8 @@ class ThemeEnqueue {
 		];
 
 		foreach ( $ourBlocks as $ourBlock ) {
-			register_block_type_from_metadata( __DIR__ . "/build/" . $ourBlock );
+			$blockPath = get_template_directory() . "/build/" . $ourBlock;
+			register_block_type_from_metadata( $blockPath );
 		}
 	}
 }

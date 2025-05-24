@@ -11,7 +11,7 @@ class Event {
 
 	public function __construct() {
 		// Constructor logic here
-		echo 'Events instantiated!';
+		//echo 'Events instantiated!';
 	}
 
 	public static function getPastEvents() {

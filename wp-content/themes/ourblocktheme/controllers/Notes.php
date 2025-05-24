@@ -5,7 +5,6 @@ namespace Ourblocktheme\controllers;
 class Notes {
 
 	public function __construct() {
-		echo 'Notes instantiated!';
 		add_filter( 'wp_insert_post_data', [ self::class, 'makeNotePrivate' ], 10, 2 );
 	}
 

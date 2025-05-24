@@ -1,8 +1,8 @@
 <?php
 
-//require_once get_theme_file_path( 'autoload.php' );
+require_once get_theme_file_path( 'autoload.php' );
 
-const GOOGLE_MAP_API_KEY = 'AIzaSyBRRnSwouBfAyhQ47rfDX0NMPcqiQ1Qm4s';
+/*const GOOGLE_MAP_API_KEY = 'AIzaSyBRRnSwouBfAyhQ47rfDX0NMPcqiQ1Qm4s';
 
 require get_theme_file_path( '/inc/like-route.php' );
 require get_theme_file_path( '/inc/search-route.php' );
@@ -23,6 +23,7 @@ function university_custom_rest(): void {
 }
 
 add_action( 'rest_api_init', 'university_custom_rest' );
+*/
 
 function pageBanner( $args = null ): void {
 
@@ -53,6 +54,8 @@ function pageBanner( $args = null ): void {
 	</div>
 <?php }
 
+
+/*
 function university_files(): void {
 	wp_enqueue_script( 'googleMap', '//maps.googleapis.com/maps/api/js?key=' . GOOGLE_MAP_API_KEY . '&v=weekly&libraries=marker', null, '1.0', true );
 	wp_enqueue_script( 'main-university-js', get_theme_file_uri( '/build/index.js' ), array( 'jquery' ), '1.0', true );
@@ -246,4 +249,4 @@ function myallowedBlocks( $allowed_block_types, $editor_context ) {
 	return array( 'ourblocktheme/header', 'ourblocktheme/footer' );
 }
 
-//add_filter( 'allowed_block_types_all', 'myallowedBlocks', 10, 2 );
+//add_filter( 'allowed_block_types_all', 'myallowedBlocks', 10, 2 );*/
