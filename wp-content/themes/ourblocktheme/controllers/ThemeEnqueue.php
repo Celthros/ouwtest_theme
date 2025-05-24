@@ -54,6 +54,7 @@ class ThemeEnqueue {
 		wp_localize_script( 'wp-editor', 'ourThemeData', [ 'themePath' => get_stylesheet_directory_uri() ] );
 
 		$ourBlocks = [
+			'pagebanner',
 			"genericheading",
 			"genericbutton",
 			"slide",
