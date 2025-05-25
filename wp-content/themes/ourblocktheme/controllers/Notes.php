@@ -8,6 +8,8 @@ class Notes {
 		add_filter( 'wp_insert_post_data', [ self::class, 'makeNotePrivate' ], 10, 2 );
 	}
 
+	public static function registerPostType(): void{}
+
 	/*
 	 * Make note private if user has reached their note limit.
 	 * Force note posts to be private
