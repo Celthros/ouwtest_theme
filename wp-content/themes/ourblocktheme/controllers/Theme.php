@@ -70,18 +70,11 @@ class Theme {
 	 */
 	public static function ourLoginHeaderTitle(): ?string {
 		$action = $_GET['action'] ?? '';
-		$title  = get_bloginfo( 'name' );
-		switch ( $action ) {
-			case 'register':
-				$title = 'Register for ' . get_bloginfo( 'name' );
-				break;
-			case 'lostpassword':
-				$title = 'Reset Password for ' . get_bloginfo( 'name' );
-				break;
-			default:
-				$title = 'Login to ' . get_bloginfo( 'name' );
-				break;
-		}
+		$title  = match ( $action ) {
+			'register' => 'Register for ' . get_bloginfo( 'name' ),
+			'lostpassword' => 'Reset Password for ' . get_bloginfo( 'name' ),
+			default => 'Login to ' . get_bloginfo( 'name' ),
+		};
 
 		return esc_html( $title );
 	}
