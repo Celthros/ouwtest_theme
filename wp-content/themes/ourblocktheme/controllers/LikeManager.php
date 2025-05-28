@@ -7,7 +7,7 @@ use WP_Error;
 
 class LikeManager {
 
-	function __construct() {
+	public function __construct() {
 		add_action( 'rest_api_init', [ self::class, 'universityLikeRoutes' ] );;
 	}
 
