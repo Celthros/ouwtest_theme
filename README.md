@@ -88,20 +88,20 @@ Using [LocalWP](https://localwp.com/) or any other method, set up a WordPress in
 
 ### Available Scripts
 
-- `yarn workspace outblocktheme format` — Format codebase
-- `yarn workspace outblocktheme lint:css` — Lint CSS files
-- `yarn workspace outblocktheme lint:js` — Lint JS files
-- `yarn workspace outblocktheme packages-update` — Update packages
+- `yarn workspace ourblocktheme format` — Format codebase
+- `yarn workspace ourblocktheme lint:css` — Lint CSS files
+- `yarn workspace ourblocktheme lint:js` — Lint JS files
+- `yarn workspace ourblocktheme packages-update` — Update packages
 
 ourblocktheme scripts (wp-content/themes/ourblocktheme/package.json)
 
-- `yarn workspace outblocktheme start` — Start development server for theme
-- `yarn workspace outblocktheme blocks` — Start block development with experimental modules
-- `yarn workspace outblocktheme build` — Build theme assets
-- `yarn workspace outblocktheme format` — Format theme code
-- `yarn workspace outblocktheme lint:css` — Lint theme CSS
-- `yarn workspace outblocktheme lint:js` — Lint theme JS
-- `yarn workspace outblocktheme packages-update` — Update theme packages
+- `yarn workspace ourblocktheme start` — Start development server for theme
+- `yarn workspace ourblocktheme blocks` — Start block development with experimental modules
+- `yarn workspace ourblocktheme build` — Build theme assets
+- `yarn workspace ourblocktheme format` — Format theme code
+- `yarn workspace ourblocktheme lint:css` — Lint theme CSS
+- `yarn workspace ourblocktheme lint:js` — Lint theme JS
+- `yarn workspace ourblocktheme packages-update` — Update theme packages
 
 ### Custom Post types 
 
