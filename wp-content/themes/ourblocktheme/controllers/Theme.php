@@ -56,6 +56,8 @@ class Theme {
 		] );
 	}
 
+	public static function removeThemeSupport(): void {}
+
 	/*
 	 * Redirect subscriber accounts out of admin and onto homepage
 	 */
