@@ -8,6 +8,7 @@ const { state } = store ( 'create-block' , {
 	actions : {
 		guessAttempt : ( action ) => {
 			const context = getContext ();
+			console.log(context.index === context.correct);
 			console.log ( context );
 		} ,
 		toggleOpen : () => {

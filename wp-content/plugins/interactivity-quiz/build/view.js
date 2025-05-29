@@ -69,6 +69,7 @@ const {
   actions: {
     guessAttempt: action => {
       const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+      console.log(context.index === context.correct);
       console.log(context);
     },
     toggleOpen: () => {
