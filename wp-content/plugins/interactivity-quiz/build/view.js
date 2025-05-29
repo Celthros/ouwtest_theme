@@ -67,7 +67,11 @@ const {
 } = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.store)('create-block', {
   state: {},
   actions: {
-    toggleOpen() {
+    guessAttempt: action => {
+      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+      console.log(context);
+    },
+    toggleOpen: () => {
       const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
       if (context) {
         context.isOpen = !context.isOpen;

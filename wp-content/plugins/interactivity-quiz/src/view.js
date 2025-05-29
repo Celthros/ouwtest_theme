@@ -4,10 +4,13 @@
 import { store , getContext } from '@wordpress/interactivity';
 
 const { state } = store ( 'create-block' , {
-	state : {
-	} ,
+	state : {} ,
 	actions : {
-		toggleOpen () {
+		guessAttempt : ( action ) => {
+			const context = getContext ();
+			console.log ( context );
+		} ,
+		toggleOpen : () => {
 			const context = getContext ();
 			if ( context ) {
 				context.isOpen = ! context.isOpen;
@@ -16,7 +19,5 @@ const { state } = store ( 'create-block' , {
 			}
 		} ,
 	} ,
-	callbacks : {
-
-	} ,
+	callbacks : {} ,
 } );

@@ -13,15 +13,15 @@
 ?>
 
 <div
-
+        style="background-color: <?php echo $attributes[ 'bgColor' ]; ?>"
      class="paying-attention-frontend"
     data-wp-interactive="create-block"
-    data-wp-context='{ "clickCount": 0 }'
+    <?php echo wp_interactivity_data_wp_context( $attributes ); ?>
 >
-    <p>The question will go here</p>
+    <p><?php echo $attributes[ 'question' ]; ?></p>
     <ul>
-        <li>Answer 1</li>
-        <li>Answer 2</li>
-        <li>Answer 3</li>
+        <template data-wp-each="context.answers">
+            <li data-wp-on--click="actions.guessAttempt" data-wp-text="context.item"></li>
+        </template>
     </ul>
 </div>
