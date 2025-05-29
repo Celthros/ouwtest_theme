@@ -13,12 +13,12 @@
 ?>
 
 <div
-        style="background-color: <?php echo $attributes[ 'bgColor' ]; ?>"
-     class="paying-attention-frontend"
-    data-wp-interactive="create-block"
-    <?php echo wp_interactivity_data_wp_context( $attributes ); ?>
+        style="background-color: <?php echo esc_attr( $attributes['bgColor'] ); ?>"
+        class="paying-attention-frontend"
+        data-wp-interactive="create-block"
+	<?php echo wp_interactivity_data_wp_context( $attributes ); ?>
 >
-    <p><?php echo $attributes[ 'question' ]; ?></p>
+    <p><?php echo esc_html_e( $attributes['question'], 'interactivity-quiz' ); ?></p>
     <ul>
         <template data-wp-each="context.answers">
             <li data-wp-on--click="actions.guessAttempt" data-wp-text="context.item"></li>
