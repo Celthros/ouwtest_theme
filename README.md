@@ -11,6 +11,24 @@
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
 
+## To Do List
+
+### Plugins
+
+**Interactivity Quiz Plugin**
+
+- convert svg html data to two svg's without span data attirbutes
+
+### Theme
+
+**Page Banner**
+ - Sub header section that creates a subtitle and custom back ground:
+ - Issue: Convert into a proper block
+
+**Blocks**
+- Convert php block registration to a auto load
+- move blocks _src_ into _src/blocks_ folder structure
+
 ## Overview
 
 The OurBlock Theme is a custom WordPress theme designed to provide a dynamic and feature-rich experience for managing and displaying content. It integrates custom post types, advanced custom fields, and block-based layouts to create a flexible and modern website.
