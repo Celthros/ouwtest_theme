@@ -13,7 +13,7 @@ class Theme {
 		add_filter( 'login_title', [ self::class, 'ourLoginHeaderTitle' ] );
 		add_filter( 'login_headertext', [ self::class, 'ourLoginTitle' ] );
 		add_action( 'rest_api_init', [ self::class, 'university_custom_rest' ] );
-		add_action( 'pre_get_posts', [ self::class, 'university_adjust_queries' ] );
+		add_action( 'pre_get_posts', [ self::class, 'adjusted_queries' ] );
 		add_action( 'init', [ self::class, 'addThemeSupport' ] );
 	}
 
@@ -56,7 +56,8 @@ class Theme {
 		] );
 	}
 
-	public static function removeThemeSupport(): void {}
+	public static function removeThemeSupport(): void {
+	}
 
 	/*
 	 * Redirect subscriber accounts out of admin and onto homepage
@@ -113,7 +114,7 @@ class Theme {
 	 *  - Event: All posts with event_date >= today
 	 *
 	 */
-	public static function university_adjust_queries( $query ): void {
+	public static function adjusted_queries( $query ): void {
 		if ( ! is_admin() && $query->is_main_query() ) {
 			if ( is_post_type_archive( 'campus' ) ) {
 				$query->set( 'posts_per_page', - 1 );
@@ -140,5 +141,23 @@ class Theme {
 				] );
 			}
 		}
+	}
+
+	/*
+	 * Add query vars
+	 *
+	 * @param array $vars
+	 * @return array
+	 *
+	 * Description: used to test if query vars are working. not used for now but wanted to keep function
+	 *  - grassColor
+	 *  - skyColor
+	 *
+	 */
+	public static function add_query_vars( $vars ): array {
+		$vars[] = 'skyColor';
+		$vars[] = 'grassColor';
+
+		return $vars;
 	}
 }
