@@ -31,7 +31,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<p { ...blockProps }>
 			{ __(
-				'Solved Counter – hello from the editor!',
+				'Solved Counter – Counts how many questions solved.',
 				'solved-counter'
 			) }
 		</p>

@@ -63,7 +63,7 @@ function Edit({
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
     ...blockProps,
-    children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Solved Counter – hello from the editor!', 'solved-counter')
+    children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Solved Counter – Counts how many questions solved.', 'solved-counter')
   });
 }
 
