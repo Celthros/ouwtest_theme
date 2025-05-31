@@ -17,6 +17,9 @@
   border-radius: 4px;
   margin-bottom: 35px;
 }
+.paying-attention-frontend .hidden {
+  display: none;
+}
 .paying-attention-frontend p {
   font-size: 1.55rem;
   margin: 0 0 15px 0 !important;

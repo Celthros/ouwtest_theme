@@ -3,7 +3,7 @@
   "apiVersion": 3,
   "name": "create-block/interactivity-quiz",
   "version": "0.1.0",
-  "title": "Interactivity Quiz",
+  "title": "Plugin: Interactivity Quiz",
   "category": "widgets",
   "attributes": {
     "question": {

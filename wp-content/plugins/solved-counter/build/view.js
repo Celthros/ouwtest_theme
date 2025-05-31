@@ -66,40 +66,8 @@ const {
   state
 } = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.store)('create-block', {
   state: {},
-  actions: {
-    guessAttempt: action => {
-      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
-      if (!context.solved) {
-        if (context.index === context.correctAnswer) {
-          context.showCongrats = true;
-          state.solvedCount++;
-          setTimeout(() => {
-            context.solved = true;
-          }, 1000);
-        } else {
-          context.showSorry = true;
-          setTimeout(() => {
-            context.showSorry = false;
-          }, 2600);
-        }
-      }
-    }
-  },
-  /*
-   * TO DO: Add a callback for when the user clicks on the button.
-   * Callbacks are functions that are called when the store state changes.
-   * MERGE SVG spans into callbacks
-   */
-  callbacks: {
-    noclickclass: () => {
-      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
-      return context.solved && context.correct;
-    },
-    fadedclass: () => {
-      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
-      return context.solved && !context.correct;
-    }
-  }
+  actions: {},
+  callbacks: {}
 });
 })();
 
