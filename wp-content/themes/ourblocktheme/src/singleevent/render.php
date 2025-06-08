@@ -17,9 +17,9 @@ use \Ourblocktheme\controllers\Program as controllerProgram;
 
 	<?php
 
-	$relatedPrograms = get_field( 'related_programs' );
+	$relatedPrograms = controllerProgram::getRelatedPrograms();
 
-	if ( $relatedPrograms ){
+	if ( $relatedPrograms ) {
 
 		$programText = controllerProgram::is_Related_txt();
 
@@ -27,10 +27,11 @@ use \Ourblocktheme\controllers\Program as controllerProgram;
         <hr class="section-break">
         <h2 class="headline headline--medium">Related <?php echo $programText; ?></h2>
         <ul class="link-list min-list">
-			<?php foreach ( $relatedPrograms as $program ) : ?>
-                <li><a href="<?php echo get_the_permalink( $program ); ?>"><?php echo get_the_title( $program ); ?></a>
+			<?php foreach ( $relatedPrograms as $program ) { ?>
+                <li>
+                    <a href="<?php echo get_the_permalink( $program ); ?>"><?php echo get_the_title( $program ); ?></a>
                 </li>
-			<?php endforeach; ?>
+			<?php } ?>
         </ul>
 	<?php } ?>
 

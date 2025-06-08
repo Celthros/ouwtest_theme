@@ -23,6 +23,47 @@ class LikeManager {
 		) );
 	}
 
+	public static function getLikes(): WP_Query {
+		return new WP_Query( array(
+			'author'     => get_current_user_id(),
+			'post_type'  => 'like',
+			'meta_query' => array(
+				array(
+					'key'     => 'liked_professor_id',
+					'compare' => '=',
+					'value'   => get_the_ID(),
+				),
+			),
+		) );
+	}
+
+	public static function getLikeCount(): WP_Query {
+		return new WP_Query( array(
+			'post_type'  => 'like',
+			'meta_query' => array(
+				array(
+					'key'     => 'liked_professor_id',
+					'compare' => '=',
+					'value'   => get_the_ID(),
+				),
+			),
+		) );
+	}
+
+	public static function likeStatus(): string {
+		$existStatus = 'no';
+
+		if ( is_user_logged_in() ) {
+			$getLikes = self::getLikes();
+
+			if ( $getLikes->found_posts ) {
+				$existStatus = 'yes';
+			}
+		}
+
+		return $existStatus;
+	}
+
 	public static function createLike( $data ): int|null|WP_Error {
 		if ( is_user_logged_in() ) {
 			$professor = sanitize_text_field( $data['professorId'] );
@@ -53,8 +94,6 @@ class LikeManager {
 			}
 
 
-		} else {
-			die( "Only logged in users can create a like." );
 		}
 
 

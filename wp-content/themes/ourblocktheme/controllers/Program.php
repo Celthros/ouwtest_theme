@@ -33,19 +33,22 @@ class Program {
 		) );
 	}
 
-	public static function is_Related_txt(): string {
-		$relatedPrograms = get_field( 'related_programs' );
-		$programText     = 'Program';
+	public static function getRelatedPrograms(): ?array {
+		return get_field( 'related_programs' );
+	}
 
-		if ( $relatedPrograms ) {
-			$count = count( $relatedPrograms );
+	public static function is_Related_txt( int $type = 1 ): string {
+		$related_programs = self::getRelatedPrograms();
+		$text             = $type === 2 ? 'Subject' : 'Program';
 
+		if ( $related_programs ) {
+			$count = count( $related_programs );
 			if ( $count > 1 ) {
-				$programText = $programText . 's';
+				$text .= 's';
 			}
 		}
 
-		return $programText;
+		return $text;
 	}
 
 }
