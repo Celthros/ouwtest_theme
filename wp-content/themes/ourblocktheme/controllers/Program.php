@@ -33,4 +33,19 @@ class Program {
 		) );
 	}
 
+	public static function is_Relatedt_txt(): string {
+		$relatedPrograms = get_field( 'related_programs' );
+		$programText     = 'Program';
+
+		if ( $relatedPrograms ) {
+			$count = count( $relatedPrograms );
+
+			if ( $count > 1 ) {
+				$programText = $programText . 's';
+			}
+		}
+
+		return $programText;
+	}
+
 }
