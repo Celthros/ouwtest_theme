@@ -1,5 +1,7 @@
 <?php
 
+use \Ourblocktheme\controllers\Event as controllerEvent;
+
 /**
  * Block Name: Events and Blogs
  *
@@ -8,22 +10,7 @@
  * @package ourblocktheme
  */
 
-$today          = date( 'Ymd' );
-$homepageEvents = new WP_Query( array(
-	'posts_per_page' => 3,
-	'post_type'      => 'event',
-	'meta_key'       => 'event_date',
-	'orderby'        => 'meta_value_num',
-	'order'          => 'ASC',
-	'meta_query'     => array(
-		array(
-			'key'     => 'event_date',
-			'compare' => '>=',
-			'value'   => $today,
-			'type'    => 'numeric'
-		)
-	)
-) );
+$homepageEvents = controllerEvent::home_Events();
 
 $homepagePosts = new WP_Query( array(
 	'posts_per_page' => 3
