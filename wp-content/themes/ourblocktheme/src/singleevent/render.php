@@ -4,6 +4,8 @@ pageBanner();
 
 use \Ourblocktheme\controllers\Program as controllerProgram;
 
+$relatedPrograms = controllerProgram::getRelatedPrograms();
+
 ?>
 
 <div class="container container--narrow page-section">
@@ -15,11 +17,7 @@ use \Ourblocktheme\controllers\Program as controllerProgram;
 
     <div class="generic-content"><?php the_content(); ?></div>
 
-	<?php
-
-	$relatedPrograms = controllerProgram::getRelatedPrograms();
-
-	if ( $relatedPrograms ) {
+	<?php  if ( $relatedPrograms ) {
 
 		$programText = controllerProgram::is_Related_txt();
 
