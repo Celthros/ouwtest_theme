@@ -33,7 +33,7 @@ class Program {
 		) );
 	}
 
-	public static function is_Relatedt_txt(): string {
+	public static function is_Related_txt(): string {
 		$relatedPrograms = get_field( 'related_programs' );
 		$programText     = 'Program';
 

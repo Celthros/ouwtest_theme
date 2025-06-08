@@ -21,7 +21,7 @@ use \Ourblocktheme\controllers\Program as controllerProgram;
 
 	if ( $relatedPrograms ){
 
-		$programText = controllerProgram::is_Relatedt_txt();
+		$programText = controllerProgram::is_Related_txt();
 
 		?>
         <hr class="section-break">
