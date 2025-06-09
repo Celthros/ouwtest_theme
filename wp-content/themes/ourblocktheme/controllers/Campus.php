@@ -2,6 +2,8 @@
 
 namespace Ourblocktheme\controllers;
 
+use WP_Query;
+
 class Campus {
 
 	public function __construct() {
@@ -28,6 +30,22 @@ class Campus {
 			'rewrite'       => array( 'slug' => 'campuses' ),
 			'show_in_rest'  => true,
 
+		) );
+	}
+
+	public static function get_Related_Campus_program(): WP_Query {
+		return new WP_Query( array(
+			'posts_per_page' => - 1,
+			'post_type'      => 'program',
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => array(
+				array(
+					'key'     => 'related_campus',
+					'compare' => 'LIKE',
+					'value'   => '"' . get_the_ID() . '"',
+				),
+			),
 		) );
 	}
 }
