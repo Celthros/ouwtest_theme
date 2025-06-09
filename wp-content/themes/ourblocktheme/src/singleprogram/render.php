@@ -1,5 +1,7 @@
 <?php
 
+use \Ourblocktheme\controllers\Professor as controllerProfesor;
+
 pageBanner();
 ?>
 
@@ -13,19 +15,8 @@ pageBanner();
 	<div class="generic-content"><?php the_field( 'main_body_content' ); ?></div>
 
 	<?php
-	$relatedProfessors = new WP_Query( array(
-		'posts_per_page' => - 1,
-		'post_type'      => 'professor',
-		'orderby'        => 'title',
-		'order'          => 'ASC',
-		'meta_query'     => array(
-			array(
-				'key'     => 'related_programs',
-				'compare' => 'LIKE',
-				'value'   => '"' . get_the_ID() . '"',
-			),
-		),
-	) );
+
+	$relatedProfessors = controllerProfesor::get_Related_Programs();
 
 	if ( $relatedProfessors->have_posts() ): ?>
 		<hr class="section-break">

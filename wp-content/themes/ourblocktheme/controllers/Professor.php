@@ -2,6 +2,8 @@
 
 namespace Ourblocktheme\controllers;
 
+use WP_Query;
+
 class Professor {
 
 	public function __construct() {
@@ -29,6 +31,22 @@ class Professor {
 			'supports'      => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
 			'show_in_rest'  => true,
 
+		) );
+	}
+
+	public static function get_Related_Programs(): WP_Query {
+		return new WP_Query( array(
+			'posts_per_page' => -1,
+			'post_type'      => 'professor',
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => array(
+				array(
+					'key'     => 'related_programs',
+					'compare' => 'LIKE',
+					'value'   => '"' . get_the_ID() . '"',
+				),
+			),
 		) );
 	}
 }
