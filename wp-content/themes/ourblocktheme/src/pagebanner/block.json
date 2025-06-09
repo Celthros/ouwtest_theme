@@ -13,15 +13,15 @@
 	"attributes": {
 		"title": {
 			"type": "string",
-			"default": ""
+      "default": "Fictional University"
 		},
 		"subtitle": {
 			"type": "string",
-			"default": ""
+      "default": "Welcome to our university"
 		},
 		"photo": {
 			"type": "string",
-			"default": ""
+      "default": "/images/ocean.jpg"
 		}
 	},
 	"editorScript": "file:./index.js",
