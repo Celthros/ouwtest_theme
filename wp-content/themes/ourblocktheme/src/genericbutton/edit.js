@@ -86,7 +86,7 @@ export default function Edit( props ) {
 				<PanelBody title="Color" initialOpen={ true }>
 					<PanelRow>
 						<ColorPalette
-							disableCustomColors={ true }
+							disableCustomColors={ false }
 							clearable={ false }
 							colors={ ourColors }
 							value={ currentColorValue }

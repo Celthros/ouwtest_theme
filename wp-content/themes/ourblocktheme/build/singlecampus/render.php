@@ -1,5 +1,7 @@
 <?php
 
+use \Ourblocktheme\controllers\Campus as CampusController;
+
 pageBanner();
 ?>
 
@@ -28,19 +30,7 @@ pageBanner();
 	<?php endif; ?>
 
 	<?php
-	$relatedPrograms = new WP_Query( array(
-		'posts_per_page' => - 1,
-		'post_type'      => 'program',
-		'orderby'        => 'title',
-		'order'          => 'ASC',
-		'meta_query'     => array(
-			array(
-				'key'     => 'related_campus',
-				'compare' => 'LIKE',
-				'value'   => '"' . get_the_ID() . '"',
-			),
-		),
-	) );
+	$relatedPrograms = CampusController::get_Related_Campus_program();
 
 	if ( $relatedPrograms->have_posts() ) { ?>
         <hr class="section-break">
