@@ -15,11 +15,11 @@
   "attributes": {
     "title": {
       "type": "string",
-      "default": "Fictional University"
+      "default": ""
     },
     "subtitle": {
       "type": "string",
-      "default": "Welcome to our university"
+      "default": ""
     },
     "photo": {
       "type": "string",
